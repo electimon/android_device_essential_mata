@@ -151,6 +151,9 @@ on boot
     mkdir /mnt/vendor/persist/time 0770 system system
     mkdir /mnt/vendor/persist/secnvm 0770 system system
 
+    # Prevents permission denied error for telephony
+    chmod 0644 /proc/cmdline
+
     setprop wifi.interface wlan0
 
 #   Define TCP buffer sizes for various networks
