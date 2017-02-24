@@ -83,6 +83,7 @@ TW_THEME := portrait_hdpi
 BOARD_SUPPRESS_SECURE_ERASE := true
 TW_X_OFFSET := 48
 TARGET_RECOVERY_DEVICE_MODULES += android.hardware.boot@1.0
+TW_INPUT_BLACKLIST := "hbtp_vm"
 
 # Extras
 USE_RECOVERY_INSTALLER := true
