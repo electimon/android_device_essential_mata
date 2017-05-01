@@ -96,6 +96,17 @@ PRODUCT_PACKAGES += \
     android.hardware.drm@1.0-service \
     android.hardware.drm@1.2-service.clearkey
 
+# FM
+PRODUCT_PACKAGES += \
+    FM2 \
+    fm_helium \
+    libfmjni \
+    libqcomfm_jni \
+    libfm-hci \
+    qcom.fmradio
+
+PRODUCT_BOOT_JARS += qcom.fmradio
+
 # GPS
 PRODUCT_PACKAGES += \
     android.hardware.gnss@2.0-impl-qti \
