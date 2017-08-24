@@ -125,6 +125,8 @@ LOC_HIDL_VERSION := 3.0
 # HIDL
 DEVICE_MANIFEST_FILE := $(DEVICE_PATH)/manifest.xml
 DEVICE_MATRIX_FILE := $(DEVICE_PATH)/compatibility_matrix.xml
+TARGET_FS_CONFIG_GEN += \
+    $(DEVICE_PATH)/mot_aids.fs
 
 # Kernel
 BOARD_KERNEL_BASE := 0x80000000
