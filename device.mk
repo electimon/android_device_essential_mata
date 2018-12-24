@@ -19,6 +19,7 @@ PRODUCT_PACKAGES += \
     audio.a2dp.default \
     audio.r_submix.default \
     audio.usb.default \
+    libaacwrapper \
     libaudio-resampler \
     libqcomvisualizer \
     libqcomvoiceprocessing \
@@ -362,6 +363,10 @@ PRODUCT_PACKAGES += \
     libgui_vendor \
     vndk_package
 
+# WiFi Display
+PRODUCT_BOOT_JARS += \
+    WfdCommon
+
 # WiFi HAL
 PRODUCT_PACKAGES += \
     android.hardware.wifi@1.0-service \
@@ -395,3 +400,4 @@ PRODUCT_COPY_FILES += \
 
 # Inherit vendor
 $(call inherit-product, vendor/motorola/ali/ali-vendor.mk)
+
