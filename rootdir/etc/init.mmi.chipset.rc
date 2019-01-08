@@ -40,6 +40,7 @@ on moto-charger
     start vendor.gbmodinstall
     start vendor.charge_only_mode
     start vendor.batt_health
+    start vendor.power_off_alarm
     start vendor.thermal-com
 
 # Set hub drive strength to +5%
