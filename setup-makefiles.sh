@@ -23,25 +23,24 @@ INITIAL_COPYRIGHT_YEAR=2020
 
 # Load extractutils and do some sanity checks
 MY_DIR="${BASH_SOURCE%/*}"
-if [[ ! -d "$MY_DIR" ]]; then MY_DIR="$PWD"; fi
+if [[ ! -d "${MY_DIR}" ]]; then MY_DIR="${PWD}"; fi
 
 ROOT="$MY_DIR"/../../..
 
 HELPER="$ROOT"/vendor/revengeos/build/tools/extract_utils.sh
-if [ ! -f "$HELPER" ]; then
-    echo "Unable to find helper script at $HELPER"
+if [ ! -f "${HELPER}" ]; then
+    echo "Unable to find helper script at ${HELPER}"
     exit 1
 fi
-. "$HELPER"
+source "${HELPER}"
 
 # Initialize the helper
-setup_vendor "$DEVICE" "$VENDOR" "$ROOT"
+setup_vendor "${DEVICE}" "${VENDOR}" "${ROOT}"
 
 # Copyright headers and guards
 write_headers
 
-# The standard blobs
-write_makefiles "$MY_DIR"/lineage-proprietary-files.txt
+write_makefiles "${MY_DIR}/proprietary-files.txt" true
 
 # Finish
 write_footers
