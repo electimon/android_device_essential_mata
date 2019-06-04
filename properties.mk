@@ -97,7 +97,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # FM
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.vendor.fm.use_audio_session=true
+    ro.vendor.fm.use_audio_session=true \
+    vendor.qcom.bluetooth.soc=smd \
+    vendor.bluetooth.soc=smd
 
 # OMX
 # Rank OMX SW codecs lower than OMX HW codecs
