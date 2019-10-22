@@ -193,7 +193,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.vendor.ims.disableADBLogs=0 \
     persist.vendor.ims.vt.enableadb=1 \
     persist.vendor.ims.disableQXDMLogs=1 \
-    ro.vendor.build.vendorprefix=/vendor
+    ro.vendor.build.vendorprefix=/vendor \
+    persist.sys.fflag.override.settings_network_and_internet_v2=true
 
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     persist.vendor.cne.feature=1 \
