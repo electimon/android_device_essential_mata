@@ -362,20 +362,19 @@ PRODUCT_PACKAGES += \
 
 # WiFi HAL
 PRODUCT_PACKAGES += \
-    android.hardware.wifi@1.0-service
-
-PRODUCT_PACKAGES += \
+    android.hardware.wifi@1.0-service \
     hostapd \
     ipacm \
     ipacm-diag \
     IPACM_cfg.xml \
+    libcld80211 \
+    libwpa_client \
+    libnfnetlink \
+    libnetfilter_conntrack \
     wcnss_service \
     wificond \
     wifilogd \
-    libwpa_client \
-    wifi_symlinks \
-    libnfnetlink \
-    libnetfilter_conntrack
+    wifi_symlinks
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/wifi/WCNSS_qcom_cfg.ini:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/WCNSS_qcom_cfg.ini \
