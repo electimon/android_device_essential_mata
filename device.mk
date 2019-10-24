@@ -364,6 +364,7 @@ PRODUCT_PACKAGES += \
     ipacm \
     ipacm-diag \
     IPACM_cfg.xml \
+    wcnss_service \
     wificond \
     wifilogd \
     libwpa_client \
