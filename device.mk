@@ -382,6 +382,12 @@ PRODUCT_PACKAGES += \
     libgui_vendor \
     vndk_package
 
+# FIXME: master: compat for libprotobuf
+# See https://android-review.googlesource.com/c/platform/prebuilts/vndk/v28/+/1109518
+PRODUCT_PACKAGES += \
+    libprotobuf-cpp-full-vendorcompat \
+    libprotobuf-cpp-lite-vendorcompat
+
 # WiFi Display
 PRODUCT_BOOT_JARS += \
     WfdCommon
