@@ -321,6 +321,7 @@ PRODUCT_PACKAGES += \
     init.qti.fm.rc \
     init.target.rc \
     fstab.qcom \
+    fstab_ramdisk.qcom \
     ueventd.qcom.rc \
 
 # RCS
