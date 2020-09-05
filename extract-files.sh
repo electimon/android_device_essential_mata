@@ -79,6 +79,10 @@ function blob_fixup() {
     vendor/lib/libjscore.so)
         sed -i "s/libgui/libwui/" "${2}"
         ;;
+
+    vendor/lib/hw/audio.primary.msm8953.so)
+        patchelf --replace-needed "libcutils.so" "libprocessgroup.so" "${2}"
+        ;;
     esac
 }
 
