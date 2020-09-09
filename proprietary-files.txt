@@ -86,15 +86,15 @@ vendor/lib/libtinyalsa.so
 vendor/lib/libunshorten.so
 
 # Bluetooth - from LA.UM.8.6.2.r1-08100-899x.0
-vendor/bin/hw/android.hardware.bluetooth@1.0-service-qti|8429b451d671b1b5d55e171bf824952f4f67c381
+vendor/bin/hw/android.hardware.bluetooth@1.0-service-qti|ddb05464e0aecdb02b4f43c6dcd19f249dd5d7bc
 vendor/etc/init/android.hardware.bluetooth@1.0-service-qti.rc|a979981c55f3dcaf6cf2212e71b901ca4d58b959
-vendor/lib64/hw/android.hardware.bluetooth@1.0-impl-qti.so|efdee835a23e6317bfae50109659c02a04e016be
-vendor/lib64/hw/vendor.qti.hardware.bluetooth_sar@1.0-impl.so|ebdfcc7064fc144acf6cba300486c6394af3d73b
+vendor/lib64/hw/android.hardware.bluetooth@1.0-impl-qti.so|1cdbc1f5d7ec60a362f2832c9d728a807b7044d7
+vendor/lib64/hw/vendor.qti.hardware.bluetooth_sar@1.0-impl.so|0d0fbcd28f5df0fd3be1ad307c9d3025c3d6043f
 vendor/lib64/hw/vendor.qti.hardware.btconfigstore@1.0-impl.so|5e06b7b33d084975d6326875268cb237ad6d8559
-vendor/lib64/com.qualcomm.qti.ant@1.0.so|9dc1bc2f1d726d71af31cc8c955aba122bbcdb1e
-vendor/lib64/libbt-hidlclient.so|0a0d0ac4e2f4e2e80f4ec488b53c18c96ff08dc6
-vendor/lib64/libbtnv.so|7f1753424a5d7c51d52bd9f7ad87542abd04a1f6
-vendor/lib64/vendor.qti.hardware.bluetooth_sar@1.0.so|d11a6abbaddbfee605c57a1a235c1da3011ee068
+vendor/lib64/com.qualcomm.qti.ant@1.0.so|a4eec2eb010ca6b6110b12eb028bb316831a8b48
+vendor/lib64/libbt-hidlclient.so|32bde8fe1c6f3f4548d794795c9f22f981dac41f
+vendor/lib64/libbtnv.so|bd1ab19b0dcdbdf204035f4d97dd868b8a367f11
+vendor/lib64/vendor.qti.hardware.bluetooth_sar@1.0.so|5678d35d32e129c37f62d50e09a9ed7f8546d429
 
 # Bluetooth (aptX) - from crosshatch - QP1A.190711.020
 lib64/libaptX_encoder.so|01379a17d29c1bbc7f6b0325709940ca8cdd7ab8
@@ -1115,6 +1115,11 @@ vendor/lib64/libOmxQcelp13Dec.so|dd49878063499adf50fa87abbee160ec5091d6fd
 vendor/lib64/libOmxWmaDec.so|9610a29440a33e6dfca61d330d0d82c9bbe78b03
 vendor/lib64/libmm-color-convertor.so|60efd198ec7461154746c5987e5a267f12f8dbc1
 vendor/lib64/libstagefright_soft_qtiflacdec.so|da2429001faaf1fbb2a651128c1f248baeacf46a
+
+# Misc - from V12.1.2.0.RJKCNXM
+-vendor/lib/libgui_vendor.so|131ca346cba389d95a366649134730794fb1966b
+vendor/lib/libmot_gpu_mapper.so|9f4d96542314976a8384f686a2a4c49d321999fe
+-vendor/lib64/libgui_vendor.so|77ceee5381d843b2cb1bd68c983bed473cdb7b16
 
 # Moto Permissions
 etc/permissions/com.motorola.moto.xml:vendor/etc/permissions/com.motorola.moto.xml
