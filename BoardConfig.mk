@@ -191,7 +191,7 @@ BOARD_ROOT_EXTRA_SYMLINKS := \
 BOARD_ROOT_EXTRA_FOLDERS := persist
 
 # SELinux
-include device/qcom/sepolicy-legacy-um/sepolicy.mk
+include device/qcom/sepolicy-legacy-um/SEPolicy.mk
 BOARD_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/
 
 # Timeservice
