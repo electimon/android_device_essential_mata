@@ -30,7 +30,7 @@ on post-fs-data
 service fingerprintd /system/bin/fingerprintd
     class late_start
     user system
-    group fingerp
+    group oem_5015
 
 on moto-charger
     setprop ro.board.platform msm8953
