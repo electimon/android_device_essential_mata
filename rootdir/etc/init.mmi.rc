@@ -9,18 +9,9 @@ import /vendor/etc/init/hw/init.mmi.usb.rc
 # Moto debugging
 import /vendor/etc/init/hw/init.mmi.debug.rc
 
-# Moto diag_mdlog configuration
-import /vendor/etc/init/hw/init.mmi.diag_mdlog.rc
-
 import /vendor/etc/init/hw/init.oem.rc
 import /vendor/etc/init/hw/init.mmi.common.rc
 import /vendor/etc/init/hw/init.mmi.nonab.rc
-
-# Moto verified boot extension
-import /vendor/etc/init/hw/init.mmi.hab.rc
-
-# Test commands
-import /vendor/etc/init/hw/init.mmi.tcmd.rc
 
 # Carrier specific script
 import /vendor/etc/init/carrier/init.${ro.boot.carrier}.rc
@@ -43,7 +34,6 @@ on init
 
 on fs
     wait /dev/block/bootdevice/by-name/hw
-    exec_start vendor.oem-hw-sh
 
     # Make sure ro.boot.product.hardware.sku is set before hwservicemanager startup.
     setprop ro.boot.product.hardware.sku ${ro.vendor.product.hardware.sku.variant}
@@ -214,9 +204,6 @@ on post-fs-data
     # folder for Blueooth ramdump
     mkdir /data/vendor/bt-ram-dumps 0750 bluetooth log
 
-    #Folder for hardware properties
-    mkdir /data/vendor/hardware_revisions 0755 system system
-
     # Imager tuning data for camera subsystem
     mkdir /data/vendor/misc/imager 0771 camera camera
 
@@ -271,27 +258,11 @@ on boot
    chown system system /mnt/vendor/persist/chargeonly/cooldown
    chmod 0660 /mnt/vendor/persist/chargeonly/cooldown
 
-service vendor.mmi-block-perm /vendor/bin/init.mmi.block_perm.sh
-    class main
-    user root
-    oneshot
-
 on nonencrypted
     setprop ro.vendor.kick.logcopy ${ro.vendor.bootreason}
 
 on property:vold.decrypt=trigger_restart_framework
     setprop ro.vendor.kick.logcopy ${ro.vendor.bootreason}
-
-service vendor.pstore_annotate /vendor/bin/pstore_annotate.sh build
-    class main
-    group log
-    oneshot
-
-service vendor.apanic_copy /vendor/bin/apanic_copy.sh
-    class late_start
-    group log
-    oneshot
-    disabled
 
 on charger
     trigger early-fs
@@ -303,12 +274,6 @@ on charger
     class_stop main
     class_stop late_start
 
-service vendor.apanic_annotate /vendor/bin/apanic_save.sh build
-    class late_start
-    group log
-    oneshot
-    disabled
-
 service vendor.batt_health /vendor/bin/batt_health
     class late_start
     user mot_pwric
@@ -317,30 +282,6 @@ service vendor.batt_health /vendor/bin/batt_health
 
 on property:sys.boot_completed=1
     start vendor.batt_health
-
-on property:ro.vendor.kick.logcopy=coldboot
-    start vendor.apanic_copy
-
-on property:ro.vendor.bootreason=watchdog
-    stop surfaceflinger
-    stop zygote
-    stop zygote_secondary
-    stop sensors
-    start vendor.apanic_annotate
-
-on property:ro.vendor.bootreason=pmic_watchdog
-    stop surfaceflinger
-    stop zygote
-    stop zygote_secondary
-    stop sensors
-    start vendor.apanic_annotate
-
-on property:ro.vendor.bootreason=kernel_panic
-    stop surfaceflinger
-    stop zygote
-    stop zygote_secondary
-    stop sensors
-    start vendor.apanic_annotate
 
 on property:persist.vendor.log.aplogd.enable=1
     start vendor.aplogd
@@ -363,11 +304,6 @@ service vendor.aplogd /vendor/bin/aplogd
 on property:vold.post_fs_data_done=*
      setprop vendor.vold.post_fs_data_done ${vold.post_fs_data_done}
 
-service vendor.mmi-boot-sh /vendor/bin/init.mmi.boot.sh
-    class core
-    user root
-    oneshot
-
 # translate to qcom property name in order to keep the consistent with
 # our legacy property
 on property:persist.vendor.qc.sub.rdump.on=*
@@ -388,47 +324,6 @@ service vendor.mbm_spy /vendor/bin/mbm_spy
     user system
     group system
     oneshot
-
-service vendor.hw_revs /vendor/bin/hardware_revisions.sh
-    class late_start
-    user system
-    group system
-    oneshot
-
-service vendor.mmi-touch-sh /vendor/bin/init.mmi.touch.sh
-    class core
-    user root
-    oneshot
-
-service vendor.oem-hw-sh /vendor/bin/init.oem.hw.sh
-    class core
-    user root
-    oneshot
-    disabled
-
-service vendor.touch-dead-sh /vendor/bin/init.oem.hw.sh -f
-    class main
-    user root
-    oneshot
-    disabled
-
-service vendor.touch-ready-sh /vendor/bin/init.oem.hw.sh -r
-    class main
-    user root
-    oneshot
-    disabled
-
-service vendor.oem-hw-config-sh /vendor/bin/init.oem.hw.sh -p
-    class main
-    user root
-    oneshot
-    disabled
-
-on property:vendor.hw.touch.status="dead"
-    start vendor.touch-dead-sh
-
-on property:vendor.hw.touch.status="ready"
-    start vendor.touch-ready-sh
 
 service vendor.charge_only_mode /vendor/bin/charge_only_mode
     user root
