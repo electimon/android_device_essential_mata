@@ -38,3 +38,7 @@ PRODUCT_BUILD_PROP_OVERRIDES += \
 
 # Set BUILD_FINGERPRINT variable to be picked up by both system and vendor build.prop
 BUILD_FINGERPRINT := 9/PPSS29.118-15-11-2/76e712:user/release-keys
+
+# RevengeOS
+IS_PHONE := true
+TARGET_BOOT_ANIMATION_RES := 1080
