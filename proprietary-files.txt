@@ -1007,6 +1007,17 @@ vendor/lib64/libsdm-disp-vndapis.so|5f2dfe8f37dd33f3f87ba9743bd228b0a90e13dd
 vendor/lib64/libsdmextension.so|97d94c820d42a7db07beef2485cd83d49606622b
 vendor/lib64/libtinyxml2_1.so|70942325afdd14eedcf11b3fbbfbc3d98f42f8dc
 
+# Graphics (Firmwares) - from LA.UM.9.6.2.r1-02100-89xx.0
+vendor/firmware/a530_gpmu.fw2|706da8d5ee565dcf456341f805ee75a40773f65a
+vendor/firmware/a530_pfp.fw|8d708b57cd2e16e740a172263fecf71c074709c2
+vendor/firmware/a530_pm4.fw|b1cf625b5552b99839687f479c124ac5daca2ca2
+vendor/firmware/a530v1_pfp.fw|0864291b99bed712edfcffa94be7b4595d3af306
+vendor/firmware/a530v1_pm4.fw|6a82a4fb4035fa2a933c1a26b5535d7ec7c0ac4c
+vendor/firmware/a530v2_seq.fw2|63b6d25594a5c1f4217d996a2b636e17a29fc840
+vendor/firmware/a530v3_gpmu.fw2|0a2f6f450231673d75ba39e5d28776db3becf810
+vendor/firmware/a530v3_seq.fw2|8963a53acc689725dee4b22881a4dd4b80e5def8
+vendor/firmware/a540_gpmu.fw2|3530f10b4825a3b08c79e0bcfaf6471ec8422f24
+
 # Graphics (Postprocessing) - LA.UM.8.6.2.r1-08100-89xx.0
 vendor/bin/hw/vendor.display.color@1.0-service|e8c561e3a169c3007b117515f2946f23a195a5e5
 vendor/bin/mm-pp-dpps|812c68cca1dd8c12c9b354e32ca3263bfe009e5c
