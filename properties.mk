@@ -229,6 +229,17 @@ PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.timed.enable=true
 
+# USB
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.usb.mtp=2e82 \
+    ro.usb.mtp_adb=2e76 \
+    ro.usb.ptp=2e83 \
+    ro.usb.ptp_adb=2e84 \
+    ro.usb.bpt=2ee5 \
+    ro.usb.bpt_adb=2ee6 \
+    ro.usb.bpteth=2ee7 \
+    ro.usb.bpteth_adb=2ee8
+
 # Voice assistant
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.opa.eligible_device=true
