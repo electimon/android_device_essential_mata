@@ -171,34 +171,47 @@
     <!-- Wifi driver supports batched scan -->
     <bool translatable="false" name="config_wifi_batched_scan_supported">true</bool>
 
+    <!-- Stability requirements in milliseconds for accepting a new brightness level.  This is used
+         for debouncing the light sensor.  Different constants are used to debounce the light sensor
+         when adapting to brighter or darker environments.  This parameter controls how quickly
+         brightness changes occur in response to an observed change in light level that exceeds the
+         hysteresis threshold. -->
+    <integer name="config_autoBrightnessBrighteningLightDebounce">2000</integer>
+    <integer name="config_autoBrightnessDarkeningLightDebounce">8000</integer>
+
+    <!-- The maximum range of gamma adjustment possible using the screen
+         auto-brightness adjustment setting. -->
+    <fraction name="config_autoBrightnessAdjustmentMaxGamma">300%</fraction>
+
     <!-- Array of light sensor LUX values to define our levels for auto backlight brightness support.
          The N entries of this array define N + 1 control points as follows:
          (1-based arrays)
-
          Point 1:            (0, value[1]):             lux <= 0
          Point 2:     (level[1], value[2]):  0        < lux <= level[1]
          Point 3:     (level[2], value[3]):  level[2] < lux <= level[3]
          ...
          Point N+1: (level[N], value[N+1]):  level[N] < lux
-
          The control points must be strictly increasing.  Each control point
          corresponds to an entry in the brightness backlight values arrays.
          For example, if LUX == level[1] (first element of the levels array)
          then the brightness will be determined by value[2] (second element
          of the brightness values array).
-
          Spline interpolation is used to determine the auto-brightness
          backlight values for LUX levels between these control points.
-
          Must be overridden in platform specific overlays -->
     <integer-array name="config_autoBrightnessLevels">
-        <item>10</item>
-        <item>30</item>
-        <item>60</item>
+        <item>5</item>
+        <item>25</item>
+        <item>50</item>
         <item>100</item>
-        <item>150</item>
-        <item>210</item>
-        <item>255</item>
+        <item>200</item>
+        <item>300</item>
+        <item>500</item>
+        <item>750</item>
+        <item>1000</item>
+        <item>1500</item>
+        <item>2000</item>
+        <item>10000</item>
     </integer-array>
 
     <!-- Array of output values for LCD backlight corresponding to the LUX values
@@ -207,22 +220,107 @@
          The brightness values must be between 0 and 255 and be non-decreasing.
          This must be overridden in platform specific overlays -->
     <integer-array name="config_autoBrightnessLcdBacklightValues">
+        <item>7</item>
         <item>10</item>
-        <item>20</item>
-        <item>40</item>
-        <item>70</item>
-        <item>110</item>
-        <item>160</item>
-        <item>200</item>
+        <item>16</item>
+        <item>29</item>
+        <item>48</item>
+        <item>80</item>
+        <item>126</item>
+        <item>181</item>
+        <item>211</item>
+        <item>232</item>
+        <item>255</item>
+        <item>255</item>
         <item>255</item>
     </integer-array>
 
+    <!-- Array of desired screen brightness in nits corresponding to the lux values
+         in the config_autoBrightnessLevels array. As with config_screenBrightnessMinimumNits and
+         config_screenBrightnessMaximumNits, the display brightness is defined as the measured
+         brightness of an all-white image.
+         If this is defined then:
+            - config_autoBrightnessLcdBacklightValues should not be defined
+            - config_screenBrightnessNits must be defined
+            - config_screenBrightnessBacklight must be defined
+         This array should have size one greater than the size of the config_autoBrightnessLevels
+         array. The brightness values must be non-negative and non-decreasing. This must be
+         overridden in platform specific overlays -->
+    <array name="config_autoBrightnessDisplayValuesNits">
+        <item>10.45935</item>   <!-- 0-1 -->
+        <item>29.25559</item>   <!-- 1-2 -->
+        <item>34.240692</item>  <!-- 2-3 -->
+        <item>37.514347</item>  <!-- 3-4 -->
+        <item>40.018696</item>  <!-- 4-8 -->
+        <item>46.885098</item>  <!-- 8-12 -->
+        <item>51.626434</item>  <!-- 12-20 -->
+        <item>58.610405</item>  <!-- 20-33 -->
+        <item>66.890915</item>  <!-- 33-55 -->
+        <item>77.61644</item>   <!-- 55-90 -->
+        <item>90.221886</item>  <!-- 90-148 -->
+        <item>105.80314</item>  <!-- 148-245 -->
+        <item>126.073845</item> <!-- 245-403 -->
+        <item>154.16931</item>  <!-- 403-665 -->
+        <item>191.83717</item>  <!-- 665-1097 -->
+        <item>240.74442</item>  <!-- 1097-1808 -->
+        <item>294.84857</item>  <!-- 1808-2981 -->
+        <item>348.05453</item>  <!-- 2981-5000 -->
+        <item>389.70</item>     <!-- 5000+ -->
+    </array>
+
+    <!-- An array of floats describing the screen brightness in nits corresponding to the backlight
+         values in the config_screenBrightnessBacklight array.  On OLED displays these  values
+         should be measured with an all white image while the display is in the fully on state.
+         Note that this value should *not* reflect the maximum brightness value for any high
+         brightness modes but only the maximum brightness value obtainable in a sustainable manner.
+         This array should be equal in size to config_screenBrightnessBacklight -->
+    <array name="config_screenBrightnessNits">
+        <item>0</item>
+        <item>26.11</item>
+        <item>50.5</item>
+        <item>74.17</item>
+        <item>96.89</item>
+        <item>118.3</item>
+        <item>139.8</item>
+        <item>162.9</item>
+        <item>189.8</item>
+        <item>217.4</item>
+        <item>240.4</item>
+        <item>265.3</item>
+        <item>288.7</item>
+        <item>316</item>
+        <item>340.8</item>
+        <item>357.9</item>
+        <item>376.2</item>
+        <item>392.9</item>
+    </array>
+
+    <!-- An array describing the screen's backlight values corresponding to the brightness
+         values in the config_screenBrightnessNits array.
+         This array should be equal in size to config_screenBrightnessBacklight. -->
+    <integer-array name="config_screenBrightnessBacklight">
+        <item>0</item>
+        <item>3</item>
+        <item>10</item>
+        <item>36</item>
+        <item>56</item>
+        <item>66</item>
+        <item>77</item>
+        <item>92</item>
+        <item>115</item>
+        <item>138</item>
+        <item>153</item>
+        <item>161</item>
+        <item>214</item>
+        <item>230</item>
+        <item>256</item>
+    </integer-array>
+
     <!-- MMS user agent string -->
-    <string name="config_mms_user_agent" translatable="false">Android-Mms/2.0</string>
+    <string name="config_mms_user_agent" translatable="false">motog6</string>
 
     <!-- MMS user agent prolfile url -->
-    <string name="config_mms_user_agent_profile_url" translatable="false"
-            >http://www.google.com/oha/rdf/ua-profile-kila.xml</string>
+    <string name="config_mms_user_agent_profile_url">http://uaprof.motorola.com/phoneconfig/motov1/Profile/motov1.rdf</string>
 
     <!-- Configuration to restart radio upon PDP_DEACTIVATE with
          error cause as Regular deactivation(36). -->
@@ -266,17 +364,16 @@
         <item>"evdo:4094,87380,524288,4096,16384,262144"</item>
     </string-array>
 
-
     <!--  Maximum number of supported users -->
     <integer name="config_multiuserMaximumUsers">4</integer>
     <!--  Whether Multiuser UI should be shown -->
     <bool name="config_enableMultiUserUI">true</bool>
 
-
     <!-- Config determines whether to update phone object when voice registration
     state changes. Voice radio tech change will always trigger an update of
     phone object irrespective of this config -->
     <bool name="config_switch_phone_on_voice_reg_state_change">false</bool>
+
     <!--  Define Google play service package for FRP-->
     <string name="config_persistentDataPackageName" translatable="false">com.google.android.gms</string>
 
