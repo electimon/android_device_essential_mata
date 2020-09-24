@@ -38,46 +38,6 @@ usb_action=`getprop usb.mmi-usb-sh.action`
 echo "mmi-usb-sh: action = \"$usb_action\""
 sys_usb_config=`getprop vendor.usb.config`
 
-tcmd_ctrl_adb ()
-{
-    ctrl_adb=`getprop vendor.tcmd.ctrl_adb`
-    echo "mmi-usb-sh: vendor.tcmd.ctrl_adb = $ctrl_adb"
-    case "$ctrl_adb" in
-        "0")
-            if [[ "$sys_usb_config" == *adb* ]]
-            then
-                # *** ALWAYS expecting adb at the end ***
-                new_usb_config=${sys_usb_config/,adb/}
-                echo "mmi-usb-sh: disabling adb ($new_usb_config)"
-                setprop persist.vendor.usb.config $new_usb_config
-                setprop vendor.usb.config $new_usb_config
-                setprop persist.vendor.factory.allow_adb 0
-            fi
-        ;;
-        "1")
-            if [[ "$sys_usb_config" != *adb* ]]
-            then
-                # *** ALWAYS expecting adb at the end ***
-                new_usb_config="$sys_usb_config,adb"
-                echo "mmi-usb-sh: enabling adb ($new_usb_config)"
-                setprop persist.vendor.usb.config $new_usb_config
-                setprop vendor.usb.config $new_usb_config
-                setprop persist.vendor.factory.allow_adb 1
-            fi
-        ;;
-    esac
-
-    exit 0
-}
-
-case "$usb_action" in
-    "")
-    ;;
-    "vendor.tcmd.ctrl_adb")
-        tcmd_ctrl_adb
-    ;;
-esac
-
 # soc_ids for 8937
 if [ -f /sys/devices/soc0/soc_id ]; then
 	soc_id=`cat /sys/devices/soc0/soc_id`
