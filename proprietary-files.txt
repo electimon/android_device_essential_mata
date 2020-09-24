@@ -939,12 +939,13 @@ vendor/lib/vendor.qti.hardware.fm@1.0.so|824f1dc341eac8201e6abdb14f377554d7a07b1
 vendor/lib64/hw/vendor.qti.hardware.fm@1.0-impl.so|942c4a88be55eb62fab614a08b64676972de2d89
 vendor/lib64/vendor.qti.hardware.fm@1.0.so|9eb88f44f2231ca4f39bee678e3f71de8ef6ebb4
 
-# Gatekeeper - from LA.UM.8.6.2.r1-08100-89xx.0
+# Gatekeeper - from deen_sprout QPKS30.54-22-12
 vendor/bin/hw/android.hardware.gatekeeper@1.0-service-qti|bea6d682011b465a08b9085f7b5e69b965743eee
 vendor/etc/init/android.hardware.gatekeeper@1.0-service-qti.rc|1b8d5f58fe0a57906acf72b862c16a2521daa97b
-vendor/lib/hw/gatekeeper.msm8953.so|c153dbbd2c31ccee8633837961ce79909257af04
-vendor/lib64/hw/android.hardware.gatekeeper@1.0-impl-qti.so|c7f9143b16a728072cfb262e25c12bc63ce17be9
-vendor/lib64/hw/gatekeeper.msm8953.so|2982026cfb7911d279bd4c9be3a02ad21cdb54ec
+vendor/lib/hw/android.hardware.gatekeeper@1.0-impl-qti.so|4c52364a1fb32a524a28e2245eb18ee93536972e
+vendor/lib/hw/gatekeeper.msm8953.so|cd04140788659ae07a50081baeb3eb2e42f37028
+vendor/lib64/hw/android.hardware.gatekeeper@1.0-impl-qti.so|8c5a8f0bec5942dc3527cff95ae09959234e9e58
+vendor/lib64/hw/gatekeeper.msm8953.so|1086e5dcda7aa2bed7ac015f7850095f6199a1c2
 
 # Graphics - LA.UM.8.6.2.r1-08100-89xx.0
 vendor/lib/egl/eglSubDriverAndroid.so|18cd5ef88b08d3dcf04de7e3698127e2ff7637ad
@@ -1015,15 +1016,17 @@ vendor/lib/vendor.display.postproc@1.0.so|8ded4bb33417aa702750cbec585a4f3dc225be
 vendor/lib64/vendor.display.color@1.0.so|cd604706cd50989b899c04a252f7f02d17996ba9
 vendor/lib64/vendor.display.postproc@1.0.so|cc62ff1b3e8ff0e11b750ae59a0f851fdab50962
 
-# Keymaster - from LA.UM.8.6.2.r1-08100-89xx.0
+# Keymaster - from deen_sprout QPKS30.54-22-12
 vendor/bin/hw/android.hardware.keymaster@3.0-service-qti|ac0aabf396888c9dc8b6dc23291e190daa943e24
 vendor/etc/init/android.hardware.keymaster@3.0-service-qti.rc|573b7392c8997008204081165cfe81a11080745d
-vendor/lib/hw/keystore.msm8953.so|67c300556d86c5013628f7a04a30f8893fc241d9
-vendor/lib64/hw/android.hardware.keymaster@3.0-impl-qti.so|ec074ef2ecc053812033c063f0d894129e67f439
-vendor/lib64/hw/keystore.msm8953.so|b2cab45df036a248a7004281bae9a6005d7e74c6
-vendor/lib64/libkeymasterdeviceutils.so|ea44915adfee57f1bd813b2184987565d396ab82
-vendor/lib64/libkeymasterprovision.so|6bf0256c9c1a05ff8350ee2a50ad7c523ae2324b
-vendor/lib64/libkeymasterutils.so|2791994395cd10eb1092b8bd8fea15987e17421d
+vendor/lib64/hw/android.hardware.keymaster@3.0-impl-qti.so|6a04ddf5b92e97596e3764d2474ca8c26fa80139
+vendor/lib64/hw/keystore.msm8953.so|9660e1c13a3589114cf18db58e5b3c3c9e14059b
+vendor/lib64/libkeymasterdeviceutils.so|5dcb23eb145570876dd1f4f05ca56a114bc9de56
+vendor/lib64/libkeymasterprovision.so|3eb6d2ed05871605cf020bf8459296aea2453f90
+vendor/lib64/libkeymasterutils.so|75d58b3f6aea66220c3352e4bef33dad9333fd1d
+vendor/lib64/libkeystore-engine-wifi-hidl.so|a6657418d9d8fdec2ea1bf044b313192008cc59c
+vendor/lib64/libkeystore-wifi-hidl.so|d351bdd38f3e8477c3c0792748af095ea0abace1
+vendor/lib64/libqtikeymaster4.so|d74b365dbfb4c25205af3855b486a2c1a74ec0ac
 
 # Moto Permissions
 etc/permissions/com.motorola.moto.xml:vendor/etc/permissions/com.motorola.moto.xml
@@ -1164,8 +1167,8 @@ vendor/bin/netmgrd|0da609f02d602a81b6f7c77a49ba8123a8d88ef1
 vendor/bin/port-bridge|3e13f94cb346fd119c3752e97905869f99de4740
 vendor/bin/adpl|1a2321d3f0b360524d03f16f5ef1f849aeced7ee
 vendor/bin/hw/qcrild|81eb6798900284293c14019d2aae5d9d65ad6f4a
-vendor/etc/data/dsi_config.xml|d4c69e7a0913dde661640320ff089261f8a1ac0c
-vendor/etc/data/netmgr_config.xml|2b2b04459d6bc578d59cacd1e438bc7e32a68c67
+vendor/etc/data/dsi_config.xml|5caf86ed7e28403955f7d9e076f459b8be2df81c
+vendor/etc/data/netmgr_config.xml|cc9101fed17c3f97616a68aac2e199544e922370
 vendor/etc/init/dataadpl.rc|cd4907d9bfd438fe5f5c86f5d6cec590ac0bac2a
 vendor/etc/init/dataqti.rc|6abfd1a850d782adbbb6f42c9d8ca870036b2ad1
 vendor/etc/init/netmgrd.rc|fd3457c69a9fab11b87d0d1b494188fe089684cd
