@@ -20,4 +20,4 @@
 /dev/block/bootdevice/by-name/fsg               /vendor/fsg             ext4    ro,nosuid,nodev                                                                    wait
 /dev/block/bootdevice/by-name/persist		/persist		ext4	noatime,nosuid,nodev,barrier=1	wait
 /persist					/mnt/vendor/persist	none	bind	wait
-/dev/block/bootdevice/by-name/oem		/oem			ext4	ro,nosuid,nodev,context=u:object_r:oemfs:s0          wait
+#/dev/block/bootdevice/by-name/oem		/oem			ext4	ro,nosuid,nodev,context=u:object_r:oemfs:s0          wait
