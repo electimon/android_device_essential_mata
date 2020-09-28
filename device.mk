@@ -290,6 +290,7 @@ PRODUCT_PACKAGES += \
     init.hidl.sensor.rc \
     init.mmi.chipset.rc \
     init.mmi.debug.rc \
+    init.mmi.overlay.rc \
     init.mmi.rc \
     init.mmi.usb.rc \
     init.qcom.rc \
