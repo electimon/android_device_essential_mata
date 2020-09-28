@@ -363,18 +363,21 @@ PRODUCT_PACKAGES += \
 # WiFi HAL
 PRODUCT_PACKAGES += \
     android.hardware.wifi@1.0-service \
+    dhcpcd.conf \
     hostapd \
-    ipacm \
-    ipacm-diag \
-    IPACM_cfg.xml \
-    libcld80211 \
+    hostapd_cli \
+    libnl_2 \
+    libnl \
+    libqsap_sdk \
+    libQWiFiSoftApCfg \
+    libwifi-hal-qcom \
     libwpa_client \
-    libnfnetlink \
-    libnetfilter_conntrack \
     wcnss_service \
     wificond \
     wifilogd \
-    wifi_symlinks
+    wpa_supplicant \
+    wpa_supplicant.conf \
+    wpa_supplicant_wcn.conf
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/wifi/WCNSS_qcom_cfg.ini:$(TARGET_COPY_OUT_VENDOR)/firmware/wlan/prima/WCNSS_qcom_cfg.ini \
