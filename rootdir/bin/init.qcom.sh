@@ -84,7 +84,7 @@ start_msm_irqbalance_8939()
 {
 	if [ -f /vendor/bin/msm_irqbalance ]; then
 		case "$platformid" in
-		    "239" | "293" | "294" | "295" | "304" | "338" | "313" |"353")
+		    "239" | "293" | "294" | "295" | "304" | "338" | "313" | "353" | "354")
 			start vendor.msm_irqbalance;;
 		    "349" | "350" )
 			start vendor.msm_irqbal_lb;;
@@ -99,11 +99,32 @@ start_msm_irqbalance_msmnile()
          fi
 }
 
+start_msm_irqbalance_kona()
+{
+         if [ -f /vendor/bin/msm_irqbalance ]; then
+                start vendor.msm_irqbalance
+         fi
+}
+
+start_msm_irqbalance_lito()
+{
+         if [ -f /vendor/bin/msm_irqbalance ]; then
+                start vendor.msm_irqbalance
+         fi
+}
+
+start_msm_irqbalance_atoll()
+{
+         if [ -f /vendor/bin/msm_irqbalance ]; then
+                start vendor.msm_irqbalance
+         fi
+}
+
 start_msm_irqbalance660()
 {
 	if [ -f /vendor/bin/msm_irqbalance ]; then
 		case "$platformid" in
-		    "317" | "324" | "325" | "326" | "345" | "346")
+		    "317" | "321" | "324" | "325" | "326" | "336" | "345" | "346" | "360" | "393")
 			start vendor.msm_irqbalance;;
 		    "318" | "327" | "385")
 			start vendor.msm_irqbl_sdm630;;
@@ -114,46 +135,18 @@ start_msm_irqbalance660()
 start_msm_irqbalance()
 {
 	if [ -f /vendor/bin/msm_irqbalance ]; then
-		start vendor.msm_irqbalance
+			start vendor.msm_irqbalance
 	fi
-}
-
-start_copying_prebuilt_qcril_db()
-{
-    if [ -f /vendor/radio/qcril_database/qcril.db -a ! -f /data/vendor/radio/qcril.db ]; then
-        # [MOTO] - First copy db from the old N path to O path for upgrade
-        if [ -f /data/misc/radio/qcril.db ]; then
-            cp /data/misc/radio/qcril.db /data/vendor/radio/qcril.db
-            # copy the backup db from the old N path to O path for upgrade
-            if [ -f /data/misc/radio/qcril_backup.db ]; then
-                cp /data/misc/radio/qcril_backup.db /data/vendor/radio/qcril_backup.db
-            fi
-            # Now delete the old folder
-            rm -fr /data/misc/radio
-        else
-            cp /vendor/radio/qcril_database/qcril.db /data/vendor/radio/qcril.db
-        fi
-        chown -h radio.radio /data/vendor/radio/qcril.db
-    else
-        # [MOTO] if qcril.db's owner is not radio (e.g. root),
-        # reset it for the recovery
-        qcril_db_owner=`stat -c %U /data/misc/radio/qcril.db`
-        echo "qcril.db's owner is $qcril_db_owner"
-        if [ $qcril_db_owner != "radio" ]; then
-            echo "reset owner to radio for qcril.db"
-            chown -h radio.radio /data/misc/radio/qcril.db
-        fi
-    fi
 }
 
 baseband=`getprop ro.baseband`
 echo 1 > /proc/sys/net/ipv6/conf/default/accept_ra_defrtr
 
-#case "$baseband" in
-#        "svlte2a")
-#        start bridgemgrd  // no bridgemgrd on 8996 for now, comment out
-#        ;;
-#esac
+case "$baseband" in
+        "svlte2a")
+        start bridgemgrd
+        ;;
+esac
 
 case "$target" in
     "msm7630_surf" | "msm7630_1x" | "msm7630_fusion")
@@ -225,7 +218,7 @@ case "$target" in
         fi
 
         case "$soc_id" in
-             "317" | "324" | "325" | "326" | "318" | "327" | "385" )
+             "317" | "324" | "325" | "326" | "318" | "327" )
                   case "$hw_platform" in
                        "Surf")
                                     setprop qemu.hw.mainkeys 0
@@ -295,7 +288,7 @@ case "$target" in
                   ;;
         esac
         ;;
-    "msm8994" | "msm8992" | "msm8998" | "apq8098_latv" | "sdm845" | "sdm710" | "qcs605" | "sm6150" | "trinket")
+    "msm8994" | "msm8992" | "msm8998" | "apq8098_latv" | "sdm845" | "sdm710" | "qcs605" | "sm6150" | "trinket" | "bengal")
         start_msm_irqbalance
         ;;
     "msm8996")
@@ -324,6 +317,15 @@ case "$target" in
         ;;
     "msmnile")
         start_msm_irqbalance_msmnile
+        ;;
+    "kona")
+        start_msm_irqbalance_kona
+        ;;
+    "lito")
+        start_msm_irqbalance_lito
+        ;;
+    "atoll")
+        start_msm_irqbalance_atoll
         ;;
     "msm8937")
         start_msm_irqbalance_8939
@@ -452,7 +454,11 @@ setprop ro.vendor.ril.mbn_copy_completed 1
 #current default minimum boot-time-default
 buildvariant=`getprop ro.build.type`
 case "$buildvariant" in
-    "user")
+    "userdebug" | "eng")
+        #set default loglevel to KERN_INFO
+        echo "6 6 1 7" > /proc/sys/kernel/printk
+        ;;
+    *)
         #set default loglevel to KERN_WARNING
         echo "4 4 1 4" > /proc/sys/kernel/printk
         ;;
