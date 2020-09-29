@@ -31,6 +31,8 @@ on init
     chmod 0640 /sys/fs/pstore/dmesg-ramoops-0
     chown system log /proc/driver/mmi_annotate
     chmod 0640 /proc/driver/mmi_annotate
+    setprop ro.vendor.hw.dualsim ${ro.boot.dualsim}
+    setprop ro.hw.radio ${ro.boot.radio}
 
 on fs
     wait /dev/block/bootdevice/by-name/hw
@@ -370,4 +372,3 @@ on property:vendor.wifi.station=true
 
 on property:vendor.wifi.station=false
     write /sys/module/wlan/parameters/sar_sta disabled
-
