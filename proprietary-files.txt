@@ -1204,52 +1204,52 @@ vendor/lib64/hw/android.hardware.power@1.0-impl.so|18b2a3208b1bbbe7a22b84e076fb3
 vendor/lib64/hw/power.default.so|7a1d998ee84aeaac69fbf3f3de905cc1ae9578ea
 vendor/lib64/hw/power.qcom.so|26cdf038376f2e5c564b3360f292e2a898a0423b
 
-# QMI
-vendor/bin/irsc_util
-vendor/lib/libdiag.so
--vendor/lib/libdsi_netctrl.so
-vendor/lib/libdsutils.so
-vendor/lib/libidl.so
-vendor/lib/libqcci_legacy.so
-vendor/lib/libqcmaputils.so
-vendor/lib/libqdi.so
-vendor/lib/libqdp.so
-vendor/lib/libqmi.so
--vendor/lib/libqmi_cci.so
-vendor/lib/libqmi_client_helper.so
-vendor/lib/libqmi_client_qmux.so
--vendor/lib/libqmi_common_so.so
-vendor/lib/libqmi_csi.so
-vendor/lib/libqmi_encdec.so
-vendor/lib64/libdiag.so
--vendor/lib64/libdsi_netctrl.so
-vendor/lib64/libdsutils.so
-vendor/lib64/libidl.so
-vendor/lib64/libqcci_legacy.so
-vendor/lib64/libqcmaputils.so
-vendor/lib64/libqdi.so
-vendor/lib64/libqdp.so
-vendor/lib64/libqmi.so
--vendor/lib64/libqmi_cci.so
-vendor/lib64/libqmi_client_helper.so
-vendor/lib64/libqmi_client_qmux.so
--vendor/lib64/libqmi_common_so.so
-vendor/lib64/libqmi_csi.so
-vendor/lib64/libqmi_encdec.so
+# QMI - from river PPOS29.114-134-4
+vendor/bin/irsc_util|d583c21663f7807553d44aa7d737cbc2deb0e3f5
+vendor/lib/libdiag.so|1d1050b949087d1a83e616a681e12b7d9800da96
+-vendor/lib/libdsi_netctrl.so|bed49fcdbb75eaa792fdb8882403afba70ef3230
+vendor/lib/libdsutils.so|eef220bca9c8f4af65f7031d4e51814ae5cca58a
+vendor/lib/libidl.so|a743507bf13d23e5fd103f8c1f7dfdc8a81f9842
+vendor/lib/libqcci_legacy.so|4a60152d8db52a1fd2755ae5623a160cc2142ea9
+vendor/lib/libqcmaputils.so|cd76c87a8582b822c84f368d4d78e7f80520c272
+vendor/lib/libqdi.so|71b286324ab50ff8e98eeecd5022f1c51c1dd131
+vendor/lib/libqdp.so|c0fe7a23a04ce9f1dd3eecbe66f77adc9a6fd0e8
+vendor/lib/libqmi.so|4baf9b463fd6afd9db3026f81a5dbe962654dd3a
+-vendor/lib/libqmi_cci.so|faa39db83103696322c097d8f803914dbfbac742
+vendor/lib/libqmi_client_helper.so|3424bc5dc2a5f8bebd0f00affaa4323fab33d0d8
+vendor/lib/libqmi_client_qmux.so|592d5915ad414e6ea44e5d92ca50911f5ddd92cd
+-vendor/lib/libqmi_common_so.so|282135ac54a9df7f3bd7e257c2bda74e64b73911
+vendor/lib/libqmi_csi.so|ee3de18c0b8b1dab4a19eba749e9ee090fad3ac9
+vendor/lib/libqmi_encdec.so|1a112d1391d9b218f2c4e103712b17a9d72e0b0d
+vendor/lib64/libdiag.so|74cbf8362ab57fa06193c6f5bf05dcf5109a3d39
+-vendor/lib64/libdsi_netctrl.so|1c9031c75713ea03076964f50a364a7a1c70e229
+vendor/lib64/libdsutils.so|e990d20031c7cada232fcd2a5ab975ec0440a603
+vendor/lib64/libidl.so|14cb8352ef6751751e2913e7dc1246343c9d5e5c
+vendor/lib64/libqcci_legacy.so|5c7371327343161920dbd5fc22dc7723874b3904
+vendor/lib64/libqcmaputils.so|0ca5ba4a97140d0d160881909eea6839906a55b5
+vendor/lib64/libqdi.so|f8253e6247c44e816d768d4975257fb090ab4ed3
+vendor/lib64/libqdp.so|4eac689ff63c9b7c27b1b756877d255ddd2f5ca9
+vendor/lib64/libqmi.so|320ec1faf8741e6e6f7efd8f53d6e4e3ea678b76
+-vendor/lib64/libqmi_cci.so|fef1251e130ac9e325d3c32b29caef6066f097d2
+vendor/lib64/libqmi_client_helper.so|216f44f46957714e4709cb9f1253f599e644dff7
+vendor/lib64/libqmi_client_qmux.so|da5ffaa0b915ad9375d417d200f3cdd08c72f5ed
+-vendor/lib64/libqmi_common_so.so|0fba7c3a28af69eb2cc7f633730cdb640f1fdd2a
+vendor/lib64/libqmi_csi.so|e4c10a4f66d00a7a1957f8f68ae16c9c863b3313
+vendor/lib64/libqmi_encdec.so|a5c73fad49c353555eff65b097828f6ccdb2731d
 
-# Radio
--product/app/datastatusnotification/datastatusnotification.apk
--product/app/QtiTelephonyService/QtiTelephonyService.apk
-product/etc/permissions/qcrilhook.xml
-product/etc/permissions/telephonyservice.xml
-product/framework/qcrilhook.jar
+# Radio - from river PPOS29.114-134-4 
+-product/app/datastatusnotification/datastatusnotification.apk|dee7fc2679ba2625e9075d4ab20ddff657c02443
+-product/app/QtiTelephonyService/QtiTelephonyService.apk|f9ef000304ec31ccfd2fecabb74653f0bb256e6f
+product/etc/permissions/qcrilhook.xml|ceb890ab3c1645aa0d0044abab1ba58c4097a991
+product/etc/permissions/telephonyservice.xml|a39eefcaf85fb8da60044fdbbcfddd95deb031c8
+product/framework/qcrilhook.jar|7bf7648b76c0575074b62f7bbff76ac518a9e721
 product/framework/qti-telephony-common.jar|74adbf98e89531ac385ab5c4cea3c2549a0d24b0
-product/framework/QtiTelephonyServicelibrary.jar
--product/priv-app/qcrilmsgtunnel/qcrilmsgtunnel.apk
-vendor/bin/qti
-vendor/bin/qmi_motext_hook
-vendor/bin/rmt_storage
-vendor/bin/tftp_server
+product/framework/QtiTelephonyServicelibrary.jar|2ac50e8bd37701ba44616e935d6a273405d60e76
+-product/priv-app/qcrilmsgtunnel/qcrilmsgtunnel.apk|1e273d1fa0893684ae27d675854ef7aabcc6d10a
+vendor/bin/qti|cb7757fe80199d18f5f79ef4070225fb1f91b718
+vendor/bin/qmi_motext_hook|9417e7eef9b249902362e25a4579bf0195299719
+vendor/bin/rmt_storage|6c3feffc596a82c7f16f55994f3748616e60d6da
+vendor/bin/tftp_server|3ea8b4c05df7d9b8c21374cecfa92d62d8b236b6
 
 # Radio - from deen - QPK30.54-8
 vendor/bin/ATFWD-daemon|2150ef51f710ee8e6b5e953c81157b8da0884e7f
