@@ -90,7 +90,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     sdm.debug.disable_skip_validate=1 \
     vendor.display.disable_skip_validate=1
 
-
 # Factory reset partition
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.frp.pst=/dev/block/platform/soc/7824900.sdhci/by-name/frp

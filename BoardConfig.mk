@@ -152,6 +152,8 @@ BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x01000000 --tags_offset 0x00000100
 TARGET_KERNEL_SOURCE := kernel/motorola/sdm450
 TARGET_KERNEL_CONFIG := ali_defconfig
 TARGET_KERNEL_VERSION := 3.18
+KERNEL_TOOLCHAIN := $(PWD)/prebuilts/gcc/linux-x86/aarch64/aarch64-elf/bin
+TARGET_KERNEL_CROSS_COMPILE_PREFIX := aarch64-elf-
 
 # NFC
 BOARD_NFC_CHIPSET := pn553
