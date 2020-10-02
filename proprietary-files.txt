@@ -85,16 +85,17 @@ vendor/lib/soundfx/libspeakerbundle.so
 vendor/lib/libtinyalsa.so
 vendor/lib/libunshorten.so
 
-# Bluetooth - from LA.UM.8.6.2.r1-08100-899x.0
-vendor/bin/hw/android.hardware.bluetooth@1.0-service-qti|ddb05464e0aecdb02b4f43c6dcd19f249dd5d7bc
+# Bluetooth - from LA.UM.9.6.2.r1-02100-89xx.0
+system_ext/lib64/com.qualcomm.qti.ant@1.0.so|d7402aae97f6ff4f5340420ac5926d8ee51b636c
+vendor/bin/hw/android.hardware.bluetooth@1.0-service-qti|8f52cd7c66d9db579c17678be3dbbd869af51313
 vendor/etc/init/android.hardware.bluetooth@1.0-service-qti.rc|a979981c55f3dcaf6cf2212e71b901ca4d58b959
-vendor/lib64/hw/android.hardware.bluetooth@1.0-impl-qti.so|1cdbc1f5d7ec60a362f2832c9d728a807b7044d7
-vendor/lib64/hw/vendor.qti.hardware.bluetooth_sar@1.0-impl.so|0d0fbcd28f5df0fd3be1ad307c9d3025c3d6043f
-vendor/lib64/hw/vendor.qti.hardware.btconfigstore@1.0-impl.so|5e06b7b33d084975d6326875268cb237ad6d8559
-vendor/lib64/com.qualcomm.qti.ant@1.0.so|a4eec2eb010ca6b6110b12eb028bb316831a8b48
-vendor/lib64/libbt-hidlclient.so|32bde8fe1c6f3f4548d794795c9f22f981dac41f
-vendor/lib64/libbtnv.so|bd1ab19b0dcdbdf204035f4d97dd868b8a367f11
-vendor/lib64/vendor.qti.hardware.bluetooth_sar@1.0.so|5678d35d32e129c37f62d50e09a9ed7f8546d429
+vendor/lib64/hw/android.hardware.bluetooth@1.0-impl-qti.so|42124f1bf6e7630538c1db2bf047476ad2be6fbb
+vendor/lib64/hw/vendor.qti.hardware.bluetooth_sar@1.1-impl.so|837979d5ede013c5f421da19e9e0815ee8b61542
+vendor/lib64/hw/vendor.qti.hardware.btconfigstore@1.0-impl.so|b802fab0acbdf5bbf29a7cc9ebbead9501bf3895
+vendor/lib64/libbt-hidlclient.so|4e528c3c6bef6b7c6900d0343cbed115709ef742
+vendor/lib64/libbtnv.so|b72a66ef2d0f7ce315e19f162db60db8891f3e61
+vendor/lib64/vendor.qti.hardware.bluetooth_sar@1.0.so|dadc33a3b5cafdf12889e9e1b3a1c0025b70253a
+vendor/lib64/vendor.qti.hardware.bluetooth_sar@1.1.so|c3a824f0af413f685d5b2b8730c7fcf1712d9736
 
 # Bluetooth (aptX) - from crosshatch - QP1A.190711.020
 lib64/libaptX_encoder.so|01379a17d29c1bbc7f6b0325709940ca8cdd7ab8
@@ -933,7 +934,7 @@ vendor/bin/fm_qsoc_patches|5b5accb606681fb1c7abc2efc8b5208ff220eb88
 vendor/lib/hw/vendor.qti.hardware.fm@1.0-impl.so|d388f414435447800cf2162a381376260b2fe321
 vendor/lib/vendor.qti.hardware.fm@1.0.so|824f1dc341eac8201e6abdb14f377554d7a07b10
 vendor/lib64/hw/vendor.qti.hardware.fm@1.0-impl.so|942c4a88be55eb62fab614a08b64676972de2d89
-vendor/lib64/vendor.qti.hardware.fm@1.0.so|9eb88f44f2231ca4f39bee678e3f71de8ef6ebb4
+vendor/lib64/vendor.qti.hardware.fm@1.0.so|ba5c8635870c0418fda824b589740308e37a6864
 
 # Gatekeeper - from deen_sprout QPKS30.54-22-12
 vendor/bin/hw/android.hardware.gatekeeper@1.0-service-qti|bea6d682011b465a08b9085f7b5e69b965743eee
