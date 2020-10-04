@@ -208,6 +208,10 @@ PRODUCT_PACKAGES += \
     libstagefrighthw \
     libstagefright_ccodec
 
+# MotoActions
+PRODUCT_PACKAGES += \
+    MotoActions
+
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/media/media_codecs.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs.xml \
     $(LOCAL_PATH)/configs/media/media_codecs_8953.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_8953.xml \
