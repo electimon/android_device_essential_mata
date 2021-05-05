@@ -16,8 +16,8 @@
 
 set -e
 
-VENDOR=motorola
-DEVICE=ali
+VENDOR=essential
+DEVICE=mata
 
 # Load extractutils and do some sanity checks
 MY_DIR="${BASH_SOURCE%/*}"
@@ -25,7 +25,7 @@ if [[ ! -d "${MY_DIR}" ]]; then MY_DIR="${PWD}"; fi
 
 ROOT="$MY_DIR"/../../..
 
-HELPER="$ROOT"/vendor/revengeos/build/tools/extract_utils.sh
+HELPER="$ROOT"/vendor/lineage/build/tools/extract_utils.sh
 if [ ! -f "${HELPER}" ]; then
     echo "Unable to find helper script at ${HELPER}"
     exit 1
@@ -62,27 +62,12 @@ setup_vendor "${DEVICE}" "${VENDOR}" "${ROOT}" false "${CLEAN_VENDOR}"
 
 function blob_fixup() {
     case "${1}" in
-
-    # Fix xml version
-    product/etc/permissions/vendor.qti.hardware.data.connection-V1.0-java.xml | product/etc/permissions/vendor.qti.hardware.data.connection-V1.1-java.xml)
-        sed -i 's/xml version="2.0"/xml version="1.0"/' "${2}"
-        ;;
-
-    vendor/lib/libmot_gpu_mapper.so)
-        sed -i "s/libgui/libwui/" "${2}"
-        ;;
-
-    vendor/lib/libmmcamera_vstab_module.so)
-        sed -i "s/libgui/libwui/" "${2}"
-        ;;
-
-    vendor/lib/libjscore.so)
-        sed -i "s/libgui/libwui/" "${2}"
-        ;;
-
-    vendor/lib/hw/audio.primary.msm8953.so)
-        patchelf --replace-needed "libcutils.so" "libprocessgroup.so" "${2}"
-        ;;
+        vendor/etc/init/android.hardware.biometrics.fingerprint@2.1-service.mata.rc)
+            sed -i 's/service fps_hal_mata/service vendor.fps_hal_mata/g' "${2}"
+            ;;
+        vendor/etc/init/vendor.essential.hardware.sidecar@1.0-service.rc)
+            sed -i 's/service sidecar-hal-1-0/service vendor.sidecar-hal-1-0/g' "${2}"
+            ;;
     esac
 }
 

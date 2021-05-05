@@ -15,4 +15,4 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/revengeos_ali.mk
+    $(LOCAL_DIR)/lineage_mata.mk

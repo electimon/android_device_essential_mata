@@ -16,8 +16,8 @@
 
 set -e
 
-VENDOR=motorola
-DEVICE=ali
+VENDOR=essential
+DEVICE=mata
 
 INITIAL_COPYRIGHT_YEAR=2020
 
@@ -27,7 +27,7 @@ if [[ ! -d "${MY_DIR}" ]]; then MY_DIR="${PWD}"; fi
 
 ROOT="$MY_DIR"/../../..
 
-HELPER="$ROOT"/vendor/revengeos/build/tools/extract_utils.sh
+HELPER="$ROOT"/vendor/lineage/build/tools/extract_utils.sh
 if [ ! -f "${HELPER}" ]; then
     echo "Unable to find helper script at ${HELPER}"
     exit 1

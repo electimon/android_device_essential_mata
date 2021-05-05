@@ -14,6 +14,16 @@
 # limitations under the License.
 #
 
+# A/B
+AB_OTA_POSTINSTALL_CONFIG += \
+    RUN_POSTINSTALL_system=true \
+    POSTINSTALL_PATH_system=system/bin/otapreopt_script \
+    FILESYSTEM_TYPE_system=ext4 \
+    POSTINSTALL_OPTIONAL_system=true
+
+PRODUCT_PACKAGES += \
+    otapreopt_script
+
 # Audio
 PRODUCT_PACKAGES += \
     audio.r_submix.default \
@@ -30,9 +40,9 @@ PRODUCT_PACKAGES += \
     tinymix
 
 PRODUCT_PACKAGES += \
-    android.hardware.audio@5.0-impl \
+    android.hardware.audio@6.0-impl \
     android.hardware.audio@2.0-service \
-    android.hardware.audio.effect@5.0-impl \
+    android.hardware.audio.effect@6.0-impl \
     android.hardware.soundtrigger@2.0-impl
 
 PRODUCT_COPY_FILES += \
@@ -50,8 +60,16 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/audio/r_submix_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/r_submix_audio_policy_configuration.xml \
     $(LOCAL_PATH)/configs/audio/usb_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/usb_audio_policy_configuration.xml \
 
-# Boot
-PRODUCT_BUILD_BOOT_IMAGE := true
+# Boot control
+PRODUCT_PACKAGES += \
+    android.hardware.boot@1.0-impl:64 \
+    android.hardware.boot@1.0-impl.recovery:64 \
+    android.hardware.boot@1.0-service \
+    bootctrl.msm8998 \
+    bootctrl.msm8998.recovery
+
+PRODUCT_PACKAGES_DEBUG += \
+    bootctl
 
 # Bluetooth
 PRODUCT_PACKAGES += \
@@ -84,10 +102,10 @@ PRODUCT_PACKAGES += \
     android.hardware.graphics.mapper@2.0-impl-2.1 \
     android.hardware.memtrack@1.0-impl \
     android.hardware.memtrack@1.0-service \
-    copybit.msm8953 \
-    gralloc.msm8953 \
-    hwcomposer.msm8953 \
-    memtrack.msm8953 \
+    copybit.msm8998 \
+    gralloc.msm8998 \
+    hwcomposer.msm8998 \
+    memtrack.msm8998 \
     libdisplayconfig \
     libgenlock \
     liboverlay \
@@ -100,21 +118,15 @@ PRODUCT_PACKAGES += \
     android.hardware.drm@1.0-service-lazy \
     android.hardware.drm@1.3-service-lazy.clearkey
 
-# FM
+# Gatekeeper HAL
 PRODUCT_PACKAGES += \
-    FM2 \
-    fm_helium \
-    libfmjni \
-    libqcomfm_jni \
-    libfm-hci \
-    qcom.fmradio
-
-PRODUCT_BOOT_JARS += qcom.fmradio
+    android.hardware.gatekeeper@1.0-impl \
+    android.hardware.gatekeeper@1.0-service
 
 # GPS
 PRODUCT_PACKAGES += \
-    android.hardware.gnss@2.0-impl-qti \
-    android.hardware.gnss@2.0-service-qti \
+    android.hardware.gnss@2.1-impl-qti \
+    android.hardware.gnss@2.1-service-qti \
     libbatching \
     libgeofencing \
     libgnss \
@@ -133,16 +145,8 @@ PRODUCT_COPY_FILES += \
 
 # Health
 PRODUCT_PACKAGES += \
-    android.hardware.health@2.0-impl \
-    android.hardware.health@2.0-service
-
-# HIDL
-PRODUCT_PACKAGES += \
-    android.hidl.base@1.0 \
-    android.hidl.base@1.0_vendor \
-    android.hidl.base@1.0_system \
-    android.hidl.manager@1.0 \
-    android.hidl.manager@1.0-java
+    android.hardware.health@2.1-impl.mata \
+    android.hardware.health@2.1-service
 
 # IDC
 PRODUCT_COPY_FILES += \
@@ -186,7 +190,7 @@ PRODUCT_PACKAGES += \
 
 # Light
 PRODUCT_PACKAGES += \
-    android.hardware.light@2.0-service.ali
+    android.hardware.light@2.0-service.mata
 
 # Low power Whitelist
 PRODUCT_COPY_FILES += \
@@ -267,6 +271,9 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.wifi.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.wifi.xml \
     frameworks/native/data/etc/android.software.midi.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.software.midi.xml
 
+# Power
+
+
 # Properties
 -include $(LOCAL_PATH)/properties.mk
 
@@ -296,27 +303,17 @@ PRODUCT_PACKAGES += \
 
 # Ramdisk
 PRODUCT_PACKAGES += \
-    init.audio.specified_para.sh \
-    init.class_main.sh \
-    init.mmi.usb.sh \
-    init.qcom.early_boot.sh \
-    init.qcom.post_boot.sh \
-    init.qcom.sensors.sh \
-    init.qcom.sh \
-    init.qti.fm.sh \
-    init.qti.qseecomd.sh \
-    init.hidl.sensor.rc \
-    init.mmi.chipset.rc \
-    init.mmi.debug.rc \
-    init.mmi.overlay.rc \
-    init.mmi.rc \
-    init.mmi.usb.rc \
-    init.qcom.rc \
-    init.qti.fm.rc \
-    init.target.rc \
     fstab.qcom \
-    fstab_ramdisk.qcom \
-    ueventd.qcom.rc \
+    init.mata.ramdump.rc \
+    init.mata.rc \
+    init.mata.usb.rc \
+    init.qcom.devstart.sh \
+    init.qcom.ipastart.sh \
+    ueventd.mata.rc
+
+# Recovery
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/rootdir/recovery/init.recovery.mata.rc:recovery/root/init.recovery.mata.rc
 
 # Seccomp
 PRODUCT_COPY_FILES += \
@@ -330,6 +327,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/sensors/hals.conf:$(TARGET_COPY_OUT_VENDOR)/etc/sensors/hals.conf \
     $(LOCAL_PATH)/configs/sensors/sensor_def_qcomdev.conf:$(TARGET_COPY_OUT_VENDOR)/etc/sensors/sensor_def_qcomdev.conf
+
+# Soong
+PRODUCT_SOONG_NAMESPACES += \
+    $(LOCAL_PATH)
 
 # Tethering
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -352,7 +353,7 @@ PRODUCT_PACKAGES += \
 
 # Thermal
 PRODUCT_PACKAGES += \
-    thermal.msm8953 \
+    thermal.msm8998 \
     android.hardware.thermal@1.0-impl \
     android.hardware.thermal@1.0-service
 
@@ -362,7 +363,11 @@ PRODUCT_PACKAGES += \
 
 # USB
 PRODUCT_PACKAGES += \
-    android.hardware.usb@1.0-service
+    android.hardware.usb@1.1-service.mata
+
+# Verity
+PRODUCT_SYSTEM_VERITY_PARTITION := /dev/block/platform/soc/1da4000.ufshc/by-name/system
+PRODUCT_VENDOR_VERITY_PARTITION := /dev/block/platform/soc/1da4000.ufshc/by-name/vendor
 
 # Vibrator
 PRODUCT_PACKAGES += \
@@ -372,12 +377,11 @@ PRODUCT_PACKAGES += \
 # VNDK
 # Update this list with what each blob is actually for
 # libicuuc: vendor.qti.hardware.qteeconnector@1.0-impl
-# libstdc++: camera.msm8953
+# libstdc++: camera.msm8998
 PRODUCT_PACKAGES += \
     libicuuc.vendor \
     libstdc++.vendor \
-    libgui_vendor \
-    vndk_package
+    libgui_vendor
 
 # FIXME: master: compat for libprotobuf
 # See https://android-review.googlesource.com/c/platform/prebuilts/vndk/v28/+/1109518
@@ -429,5 +433,5 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/wifi/wpa_supplicant_overlay.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/wpa_supplicant_overlay.conf \
 
 # Inherit vendor
-$(call inherit-product, vendor/motorola/ali/ali-vendor.mk)
+$(call inherit-product, vendor/essential/mata/mata-vendor.mk)
 
