@@ -19,7 +19,7 @@
 $(call inherit-product, $(SRC_TARGET_DIR)/product/base.mk)
 
 # define hardware platform
-PRODUCT_PLATFORM := msm8953
+PRODUCT_PLATFORM := msm8998
 
 # A/B support
 AB_OTA_UPDATER := true
@@ -30,19 +30,16 @@ AB_OTA_UPDATER := true
 AB_OTA_PARTITIONS += \
     boot \
     system \
-    vendor \
-    vbmeta \
-    dtbo
+    vendor
 
+# A/B
 PRODUCT_PACKAGES += \
     otapreopt_script \
     cppreopts.sh \
     update_engine \
-    update_verifier
-
-PRODUCT_PACKAGES += \
-    bootctrl.$(PRODUCT_PLATFORM) \
-    update_engine_sideload
+    update_engine_sideload \
+    update_verifier \
+    sg_write_buffer
 
 AB_OTA_POSTINSTALL_CONFIG += \
     RUN_POSTINSTALL_system=true \
@@ -50,10 +47,13 @@ AB_OTA_POSTINSTALL_CONFIG += \
     FILESYSTEM_TYPE_system=ext4 \
     POSTINSTALL_OPTIONAL_system=true
 
-# qcom standard decryption
-PRODUCT_PACKAGES += \
-    qcom_decrypt \
-    qcom_decrypt_fbe
+# Enable update engine sideloading by including the static version of the
+# boot_control HAL and its dependencies.
+PRODUCT_STATIC_BOOT_CONTROL_HAL := \
+    bootctrl.msm8998 \
+    libgptutils.msm8998 \
+    libz \
+    libcutils
 
 # tzdata
 PRODUCT_PACKAGES += \
@@ -83,3 +83,9 @@ PRODUCT_SYSTEM_PROPERTY_BLACKLIST += \
 
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.vendor.build.security_patch=2099-12-31
+
+# VNDK
+PRODUCT_PACKAGES += \
+    libicuuc.vendor \
+    libstdc++.vendor \
+    vndk_package
