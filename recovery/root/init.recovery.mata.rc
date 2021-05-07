@@ -39,6 +39,8 @@ on fs
     start hwservicemanager
     start qseecomd
     start adsprpcd
+    mkdir /data/vendor
+    mkdir /data/vendor/hbtp
     start hbtp_daemon
 
 service hwservicemanager /system/bin/hwservicemanager

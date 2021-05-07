@@ -22,7 +22,7 @@ $(call inherit-product, vendor/omni/config/common.mk)
 PRODUCT_DEVICE := mata
 PRODUCT_NAME := omni_$(PRODUCT_DEVICE)
 PRODUCT_BRAND := essential
-PRODUCT_MODEL := moto g(7) power
+PRODUCT_MODEL := Essential Phone
 PRODUCT_MANUFACTURER := essential
 
 # Inherit from hardware-specific part of the product configuration
