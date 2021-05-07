@@ -39,7 +39,7 @@ using android::hardware::health::V2_0::Result;
 using ::android::hardware::health::V2_1::IHealth;
 using android::hardware::health::InitHealthdConfig;
 
-#define UFS_DIR "/sys/devices/platform/soc/1da4000.ufshc"
+#define UFS_DIR "/sys/devices/soc/1da4000.ufshc"
 constexpr char kUfsHealthEol[]{UFS_DIR "/health_descriptor/eol_info"};
 constexpr char kUfsHealthLifetimeA[]{UFS_DIR "/health_descriptor/life_time_estimation_a"};
 constexpr char kUfsHealthLifetimeB[]{UFS_DIR "/health_descriptor/life_time_estimation_b"};

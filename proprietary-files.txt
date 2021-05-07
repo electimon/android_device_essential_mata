@@ -72,6 +72,10 @@ vendor/firmware/crnv20.bin
 vendor/firmware/crnv21.bin
 
 # Camera
+vendor/etc/camera/camera_config.xml
+vendor/etc/camera/imx258_chromatix.xml
+vendor/etc/camera/imx258_mono_chromatix.xml
+vendor/etc/camera/imx268_chromatix.xml
 vendor/lib/hw/camera.msm8998.so
 vendor/lib/libactuator_ak7371_mono.so
 vendor/lib/libactuator_ak7371.so
