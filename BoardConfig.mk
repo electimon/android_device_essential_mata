@@ -57,6 +57,9 @@ USE_XML_AUDIO_POLICY_CONF := 1
 # Bluetooth
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(DEVICE_PATH)/bluetooth/include
 BOARD_HAVE_BLUETOOTH_QCOM := true
+TARGET_USE_QTI_BT_STACK := true
+QCOM_BT_USE_SMD_TTY := true
+QCOM_BT_USE_BTNV := true
 
 # DexPreopt - Enable dex-preoptimization to speed up first boot sequence
 ifeq ($(HOST_OS),linux)
