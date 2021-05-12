@@ -27,12 +27,13 @@ $(call inherit-product, $(LOCAL_PATH)/device.mk)
 
 PRODUCT_BRAND := essential
 PRODUCT_DEVICE := mata
-PRODUCT_MANUFACTURER := essential
+PRODUCT_MANUFACTURER := Essential Products
 PRODUCT_NAME := lineage_mata
 PRODUCT_MODEL := PH-1
+PRODUCT_RELEASE_NAME := mata
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
-    PRIVATE_BUILD_DESC="motorola/ali/ali:9/PPSS29.118-15-11-2/76e712:user/release-keys"
+        PRIVATE_BUILD_DESC="mata-user 8.1.0 OPM1.180104.092 224 release-keys"
 
 # Set BUILD_FINGERPRINT variable to be picked up by both system and vendor build.prop
-BUILD_FINGERPRINT := 9/PPSS29.118-15-11-2/76e712:user/release-keys
+BUILD_FINGERPRINT := essential/mata/mata:8.1.0/OPM1.180104.092/224:user/release-keys
