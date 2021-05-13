@@ -39,7 +39,6 @@ vendor/lib/libaudioalsa.so
 vendor/lib/libdrc.so
 vendor/lib/libqtigef.so
 vendor/lib/libsurround_3mic_proc.so
-vendor/lib/libtinycompress.so
 vendor/lib64/libacdb-fts.so
 vendor/lib64/libacdbloader.so
 vendor/lib64/libacdbmapper.so
@@ -48,7 +47,6 @@ vendor/lib64/libadiertac.so
 vendor/lib64/libaudcal.so
 vendor/lib64/libaudioalsa.so
 vendor/lib64/libqtigef.so
-vendor/lib64/libtinycompress.so
 
 # Audio-ACDB
 vendor/etc/acdbdata/Mata/Mata_Bluetooth_cal.acdb
@@ -843,6 +841,7 @@ vendor/lib64/libtsext_inf.so
 
 # Radio
 -app/embms/embms.apk
+-app/ims/ims.apk
 etc/permissions/embms.xml
 etc/sysconfig/qti_whitelist.xml
 framework/embmslibrary.jar
@@ -1029,6 +1028,7 @@ vendor/bin/ssr_diag
 vendor/bin/ssr_setup
 
 # Sensor-configs
+vendor/etc/sensors/hals.conf
 vendor/etc/sensors/sensor_def_qcomdev.conf
 
 # Sensors
@@ -1055,11 +1055,11 @@ vendor/etc/thermal-engine.conf
 -vendor/lib64/libthermalclient.so
 vendor/lib64/libthermalioctl.so
 
-# Time
--vendor/app/TimeService/TimeService.apk
-vendor/bin/time_daemon
-vendor/lib/libtime_genoff.so
-vendor/lib64/libtime_genoff.so
+# Time Services - from LA.UM.8.2.r1-07400-sdm660.0
+-vendor/app/TimeService/TimeService.apk|c935b678fdaed033513f044f6492361c3370f9f0
+vendor/bin/time_daemon|a213fb73b9b1cbbdb631851a337ffd64ae08367e
+vendor/lib/libtime_genoff.so|d3d9308d4a5d736eb442f6e9daab47cdc5bb61c7
+vendor/lib64/libtime_genoff.so|216cbb72e22a0ca76d766dc0b84055c5b31e0a4c
 
 # Touchscreen-ImproveTouch
 vendor/lib/vendor.qti.hardware.improvetouch.blobmanager@1.0-service.so
