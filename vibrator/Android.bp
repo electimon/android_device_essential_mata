@@ -28,6 +28,7 @@ cc_binary {
         "libutils",
         "libhardware",
         "libbinder_ndk",
+        "android.hardware.vibrator@1.2",
         "android.hardware.vibrator-ndk_platform",
     ],
     proprietary: true,
