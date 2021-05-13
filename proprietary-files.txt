@@ -58,16 +58,6 @@ vendor/etc/acdbdata/Mata/Mata_Headset_cal.acdb
 vendor/etc/acdbdata/Mata/Mata_Speaker_cal.acdb
 vendor/etc/acdbdata/Mata/Mata_workspaceFile.qwsp
 
-# Audio SoundFX
-vendor/lib/soundfx/libqcompostprocbundle.so
-vendor/lib/soundfx/libqcomvisualizer.so
-vendor/lib/soundfx/libqcomvoiceprocessing.so
-vendor/lib/soundfx/libvolumelistener.so
-vendor/lib64/soundfx/libqcompostprocbundle.so
-vendor/lib64/soundfx/libqcomvisualizer.so
-vendor/lib64/soundfx/libqcomvoiceprocessing.so
-vendor/lib64/soundfx/libvolumelistener.so
-
 # Bluetooth
 vendor/bin/btaddr_extract
 
@@ -488,19 +478,9 @@ vendor/lib64/libmm-hdcpmgr.so
 # DRM-Widevine
 vendor/bin/hw/android.hardware.drm@1.2-service.widevine
 vendor/etc/init/android.hardware.drm@1.2-service.widevine.rc
-vendor/lib/mediadrm/libdrmclearkeyplugin.so
-vendor/lib/qcdrm/playready/lib/drm/libdrmprplugin_customer.so
-vendor/lib/qcdrm/playready/lib/libprdrmdecrypt_customer.so
-vendor/lib/qcdrm/playready/lib/libtzplayready_customer.so
-vendor/lib/qcdrm/playready/lib/mediadrm/libprmediadrmdecrypt_customer.so
-vendor/lib/qcdrm/playready/lib/mediadrm/libprmediadrmplugin_customer.so
 vendor/lib/liboemcrypto.so
 vendor/lib64/liboemcrypto.so
 vendor/lib64/libwvhidl.so
-vendor/lib64/mediadrm/libdrmclearkeyplugin.so
-
-# DTS
-vendor/lib/libomx-dts.so
 
 # FM
 vendor/lib/vendor.qti.hardware.fm@1.0.so
@@ -725,7 +705,6 @@ vendor/lib/libOmxQcelp13Dec.so
 vendor/lib/libOmxVideoDSMode.so
 vendor/lib/libOmxVpp.so
 vendor/lib/libOmxWmaDec.so
-vendor/lib/libstagefright_soft_mpeg2dec.so
 vendor/lib/libvpphvx.so
 vendor/lib/libvpplibrary.so
 vendor/lib/libvqzip.so
@@ -750,20 +729,6 @@ vendor/lib64/libOmxWmaDec.so
 vendor/lib64/libvpphvx.so
 vendor/lib64/libvpplibrary.so
 
-# Media-Hardware
-vendor/lib/libc2dcolorconvert.so
-vendor/lib/libmm-omxcore.so
-vendor/lib/libOmxCore.so
-vendor/lib/libOmxVdec.so
-vendor/lib/libOmxVenc.so
-vendor/lib/libstagefrighthw.so
-vendor/lib64/libc2dcolorconvert.so
-vendor/lib64/libmm-omxcore.so
-vendor/lib64/libOmxCore.so
-vendor/lib64/libOmxVdec.so
-vendor/lib64/libOmxVenc.so
-vendor/lib64/libstagefrighthw.so
-
 # MSM IRQ Balancer
 vendor/bin/msm_irqbalance
 
@@ -771,6 +736,49 @@ vendor/bin/msm_irqbalance
 vendor/etc/libnfc-nci.conf
 vendor/etc/libnfc-nxp.conf
 vendor/lib/libpn548ad_fw.so
+
+# Perf - from LA.UM.8.2.r1-07400-sdm660.0
+lib/libqti-perfd-client_system.so
+lib/libqti-util_system.so
+lib/libqti_performance.so
+lib64/libqti-perfd-client_system.so
+lib64/libqti-util_system.so
+lib64/libqti_performance.so
+product/lib/vendor.qti.hardware.perf@1.0.so
+product/lib/vendor.qti.hardware.perf@2.0.so
+product/lib/vendor.qti.hardware.perf@2.1.so
+product/lib64/vendor.qti.hardware.perf@1.0.so
+product/lib64/vendor.qti.hardware.perf@2.0.so
+product/lib64/vendor.qti.hardware.perf@2.1.so
+vendor/bin/energy-awareness
+vendor/bin/hw/vendor.qti.hardware.perf@2.1-service
+vendor/etc/init/vendor.qti.hardware.perf@2.1-service.rc
+vendor/etc/perf/commonresourceconfigs.xml
+vendor/etc/perf/perfboostsconfig.xml
+vendor/etc/perf/perfconfigstore.xml
+vendor/etc/perf/targetconfig.xml
+vendor/etc/perf/targetresourceconfigs.xml
+vendor/lib/libperfgluelayer.so
+vendor/lib/libqti-perfd-client.so
+vendor/lib/libqti-perfd.so
+vendor/lib/libqti-util.so
+vendor/lib/libqti-utils.so
+vendor/lib/vendor.qti.hardware.perf@1.0.so
+vendor/lib/vendor.qti.hardware.perf@2.0.so
+vendor/lib/vendor.qti.hardware.perf@2.1.so
+vendor/lib64/libadaptlaunch.so
+vendor/lib64/liblearningmodule.so
+vendor/lib64/libmeters-ns.so
+vendor/lib64/libmeters.so
+vendor/lib64/libperfconfig.so
+vendor/lib64/libperfgluelayer.so
+vendor/lib64/libqti-perfd-client.so
+vendor/lib64/libqti-perfd.so
+vendor/lib64/libqti-util.so
+vendor/lib64/libqti-utils.so
+vendor/lib64/vendor.qti.hardware.perf@1.0.so
+vendor/lib64/vendor.qti.hardware.perf@2.0.so
+vendor/lib64/vendor.qti.hardware.perf@2.1.so
 
 # Perf
 vendor/etc/perf-profile0.conf
@@ -783,8 +791,6 @@ vendor/etc/perf-profile6.conf
 vendor/etc/perf-profile7.conf
 vendor/etc/perf-profile8.conf
 vendor/etc/powerhint.xml
-vendor/lib/libqti-perfd-client.so
-vendor/lib64/libqti-perfd-client.so
 
 # Peripheral
 vendor/bin/pm-proxy
@@ -795,15 +801,6 @@ vendor/lib64/libperipheral_client.so
 # Postprocessing
 vendor/lib/libdisp-aba.so
 vendor/lib64/libdisp-aba.so
-
-# Power-Hardware
-vendor/bin/hw/android.hardware.power@1.3-service.mata-libperfmgr
-vendor/etc/init/android.hardware.power@1.3-service.mata-libperfmgr.rc
--vendor/etc/vintf/manifest/android.hardware.power@1.3-service.mata.xml
-vendor/etc/powerhint.json
-vendor/lib/hw/power.default.so
-vendor/lib64/hw/power.default.so
-vendor/lib64/libperfmgr.so
 
 # QMI - from LA.UM.8.2.r1-07400-sdm660.0
 vendor/lib/libqmi_cci.so
