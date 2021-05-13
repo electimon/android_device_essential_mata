@@ -401,10 +401,6 @@ PRODUCT_PACKAGES += \
     libhwbinder.vendor \
     libhidltransport.vendor
 
-# WiFi Display
-PRODUCT_BOOT_JARS += \
-    WfdCommon
-
 # WiFi HAL
 PRODUCT_PACKAGES += \
     android.hardware.wifi@1.0-service \
