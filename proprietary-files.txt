@@ -435,6 +435,10 @@ vendor/lib64/libmmcamera_tintless_bg_pca_algo.so
 # Charger
 vendor/bin/hvdcp_opti
 
+# Display
+vendor/lib/vendor.display.config@1.0_vendor.so
+vendor/lib64/vendor.display.config@1.0_vendor.so
+
 # DRM
 vendor/bin/qseecomd
 vendor/lib/libbase64.so
