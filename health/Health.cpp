@@ -43,7 +43,6 @@ using android::hardware::health::InitHealthdConfig;
 constexpr char kUfsHealthEol[]{UFS_DIR "/health_descriptor/eol_info"};
 constexpr char kUfsHealthLifetimeA[]{UFS_DIR "/health_descriptor/life_time_estimation_a"};
 constexpr char kUfsHealthLifetimeB[]{UFS_DIR "/health_descriptor/life_time_estimation_b"};
-constexpr char kUfsVersion[]{UFS_DIR "/device_descriptor/specification_version"};
 constexpr char kDiskStatsFile[]{"/sys/block/sda/stat"};
 constexpr char kUFSName[]{"UFS0"};
 
@@ -62,14 +61,6 @@ void read_value_from_file(const std::string &path, T *field) {
   stream >> *field;
 }
 
-void read_ufs_version(StorageInfo *info) {
-  uint64_t value;
-  read_value_from_file(kUfsVersion, &value);
-  std::stringstream ss;
-  ss << "ufs " << std::hex << value;
-  info->version = ss.str();
-}
-
 void fill_ufs_storage_attribute(StorageAttribute *attr) {
   attr->isInternal = true;
   attr->isBootDevice = true;
@@ -81,7 +72,6 @@ void private_get_storage_info(std::vector<StorageInfo> &vec_storage_info) {
   StorageInfo *storage_info = &vec_storage_info[0];
   fill_ufs_storage_attribute(&storage_info->attr);
 
-  read_ufs_version(storage_info);
   read_value_from_file(kUfsHealthEol, &storage_info->eol);
   read_value_from_file(kUfsHealthLifetimeA, &storage_info->lifetimeA);
   read_value_from_file(kUfsHealthLifetimeB, &storage_info->lifetimeB);
