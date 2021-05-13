@@ -13,15 +13,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
-cc_library_shared {
-    name: "android.hardware.health@2.1-impl.mata",
-    stem: "android.hardware.health@2.0-impl-2.1",
-
+cc_binary {
+    name: "android.hardware.health@2.0-service.mata",
+    init_rc: ["android.hardware.health@2.0-service.mata.rc"],
     proprietary: true,
     relative_install_path: "hw",
     srcs: [
-        "Health.cpp",
+        "HealthService.cpp",
     ],
 
     cflags: [
@@ -30,18 +28,19 @@ cc_library_shared {
     ],
 
     static_libs: [
+        "android.hardware.health@2.0-impl",
         "android.hardware.health@1.0-convert",
+        "libhealthservice",
         "libbatterymonitor",
-        "libhealth2impl",
-        "libhealthloop",
     ],
 
     shared_libs: [
         "libbase",
         "libcutils",
-        "libhidlbase",
+        "libbinder_ndk",
         "libutils",
         "android.hardware.health@2.0",
-        "android.hardware.health@2.1",
     ],
+
+    header_libs: ["libhealthd_headers"],
 }
