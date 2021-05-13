@@ -801,6 +801,10 @@ vendor/lib/hw/power.default.so
 vendor/lib64/hw/power.default.so
 vendor/lib64/libperfmgr.so
 
+# QMI - from LA.UM.8.2.r1-07400-sdm660.0
+vendor/lib/libqmi_cci.so
+vendor/lib64/libqmi_cci.so
+
 # QMI
 etc/permissions/qti_permissions.xml
 vendor/bin/irsc_util
@@ -814,7 +818,6 @@ vendor/lib/libqdi.so
 vendor/lib/libqdp.so
 vendor/lib/libqmi.so
 vendor/lib/libqmiservices.so
-vendor/lib/libqmi_cci.so
 vendor/lib/libqmi_client_helper.so
 vendor/lib/libqmi_client_qmux.so
 vendor/lib/libqmi_common_so.so
@@ -830,7 +833,6 @@ vendor/lib64/libqdi.so
 vendor/lib64/libqdp.so
 vendor/lib64/libqmi.so
 vendor/lib64/libqmiservices.so
-vendor/lib64/libqmi_cci.so
 vendor/lib64/libqmi_client_helper.so
 vendor/lib64/libqmi_client_qmux.so
 vendor/lib64/libqmi_common_so.so
@@ -913,50 +915,60 @@ vendor/lib64/vendor.qti.hardware.radio.uim_remote_client@1.0_vendor.so
 vendor/lib64/vendor.qti.hardware.radio.uim_remote_server@1.0_vendor.so
 vendor/radio/qcril_database/qcril.db
 
+# Radio-IMS - from LA.UM.8.2.r1-07400-sdm660.0
+vendor/bin/imsrcsd
+vendor/lib/com.qualcomm.qti.imscmservice@1.0.so
+vendor/lib/lib-imscmservice.so
+vendor/lib/lib-imsrcs-v2.so
+vendor/lib/lib-uceservice.so
+vendor/lib64/com.qualcomm.qti.imscmservice@1.0.so
+vendor/lib64/com.qualcomm.qti.imscmservice@2.0.so
+vendor/lib64/com.qualcomm.qti.imscmservice@2.1.so
+vendor/lib64/com.qualcomm.qti.imscmservice@2.2.so
+vendor/lib64/com.qualcomm.qti.uceservice@2.0.so
+vendor/lib64/com.qualcomm.qti.uceservice@2.1.so
+vendor/lib64/com.qualcomm.qti.uceservice@2.2.so
+vendor/lib64/vendor.qti.ims.callcapability@1.0.so
+vendor/lib64/vendor.qti.ims.callinfo@1.0.so
+vendor/lib64/vendor.qti.ims.factory@1.0.so
+vendor/lib64/lib-imscmservice.so
+vendor/lib64/lib-imsrcsbaseimpl.so
+vendor/lib64/lib-imsrcs-v2.so
+vendor/lib64/lib-uceservice.so
+
 # Radio-IMS
 -app/uceShimService/uceShimService.apk|acfdef9ac40bf6b1bd44dfb4e658387d4cf33d0a
-lib/com.qualcomm.qti.imscmservice@1.0.so
 lib/libdiag_system.so
 lib/libimscamera_jni.so
 lib/libimsmedia_jni.so
 lib/vendor.qti.imsrtpservice@1.0.so
-lib64/com.qualcomm.qti.imscmservice@1.0.so
 lib64/libdiag_system.so
 lib64/libimscamera_jni.so
 lib64/libimsmedia_jni.so
 lib64/vendor.qti.imsrtpservice@1.0.so
 vendor/bin/imsdatadaemon
 vendor/bin/imsqmidaemon
-vendor/bin/imsrcsd
 vendor/bin/ims_rtp_daemon
 vendor/framework/qti-vzw-ims-internal.jar
-vendor/lib/com.qualcomm.qti.imscmservice@1.0_vendor.so
 vendor/lib/lib-dplmedia.so
-vendor/lib/lib-imscmservice.so
 vendor/lib/lib-imsdpl.so
 vendor/lib/lib-imsqimf.so
-vendor/lib/lib-imsrcs-v2.so
 vendor/lib/lib-imsxml.so
 vendor/lib/lib-rtpcommon.so
 vendor/lib/lib-rtpcore.so
 vendor/lib/lib-rtpdaemoninterface.so
 vendor/lib/lib-rtpsl.so
-vendor/lib/lib-uceservice.so
 vendor/lib/vendor.qti.hardware.radio.ims@1.0.so
 vendor/lib/vendor.qti.imsrtpservice@1.0-service-Impl.so
 vendor/lib/vendor.qti.imsrtpservice@1.0_vendor.so
-vendor/lib64/com.qualcomm.qti.imscmservice@1.0_vendor.so
 vendor/lib64/lib-dplmedia.so
-vendor/lib64/lib-imscmservice.so
 vendor/lib64/lib-imsdpl.so
 vendor/lib64/lib-imsqimf.so
-vendor/lib64/lib-imsrcs-v2.so
 vendor/lib64/lib-imsxml.so
 vendor/lib64/lib-rtpcommon.so
 vendor/lib64/lib-rtpcore.so
 vendor/lib64/lib-rtpdaemoninterface.so
 vendor/lib64/lib-rtpsl.so
-vendor/lib64/lib-uceservice.so
 vendor/lib64/vendor.qti.hardware.radio.ims@1.0.so
 vendor/lib64/vendor.qti.imsrtpservice@1.0-service-Impl.so
 vendor/lib64/vendor.qti.imsrtpservice@1.0_vendor.so
@@ -1031,19 +1043,21 @@ vendor/bin/ssr_setup
 vendor/etc/sensors/hals.conf
 vendor/etc/sensors/sensor_def_qcomdev.conf
 
-# Sensors
-vendor/bin/sensors.qcom
+# Sensor-hals
 vendor/lib/hw/activity_recognition.msm8998.so
-vendor/lib/libsensor1.so
-vendor/lib/libsensor_reg.so
 vendor/lib/sensors.hal.tof.so
 vendor/lib/sensors.mata.so
-vendor/lib/sensor_calibrate.so
 vendor/lib64/hw/activity_recognition.msm8998.so
-vendor/lib64/libsensor1.so
-vendor/lib64/libsensor_reg.so
 vendor/lib64/sensors.hal.tof.so
 vendor/lib64/sensors.mata.so
+
+# Sensors - from LA.UM.8.2.r1-07400-sdm660.0
+vendor/bin/sensors.qti
+vendor/lib/libsensor1.so
+vendor/lib/libsensor_reg.so
+vendor/lib/sensor_calibrate.so
+vendor/lib64/libsensor1.so
+vendor/lib64/libsensor_reg.so
 vendor/lib64/sensor_calibrate.so
 
 # Thermal
@@ -1093,12 +1107,6 @@ vendor/lib/libstreamparser.so
 vendor/lib/libUBWC.so
 vendor/lib64/libstreamparser.so
 vendor/lib64/libUBWC.so
-
-# Vibrator
-vendor/bin/hw/android.hardware.vibrator@1.2-service.mata
-vendor/etc/init/android.hardware.vibrator@1.2-service.mata.rc
-vendor/lib/hw/vibrator.default.so
-vendor/lib64/hw/vibrator.default.so
 
 # Voice
 vendor/etc/qvop/antispoofing.bin

@@ -816,7 +816,7 @@ service vendor.rmt_storage /vendor/bin/rmt_storage
     shutdown critical
     ioprio rt 0
 
-service vendor.sensors /vendor/bin/sensors.qcom
+service vendor.sensors /vendor/bin/sensors.qti
     class core
     user system
     group system
