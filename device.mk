@@ -31,12 +31,15 @@ PRODUCT_PACKAGES += \
     audio.usb.default \
     libaacwrapper \
     libaudio-resampler \
+    libqcompostprocbundle \
     libqcomvisualizer \
     libqcomvoiceprocessing \
     libqcomvoiceprocessingdescriptors \
+    libreverbwrapper \
     libtinyxml \
     libtinycompress \
     libaudioroute \
+    libvisualizer \
     libvolumelistener \
     tinymix
 
