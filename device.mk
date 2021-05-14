@@ -316,6 +316,7 @@ PRODUCT_PACKAGES += \
     init.mata.usb.rc \
     init.qcom.devstart.sh \
     init.qcom.ipastart.sh \
+    init.qcom.post_boot.sh \
     ueventd.mata.rc
 
 # Recovery
