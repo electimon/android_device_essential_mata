@@ -163,7 +163,7 @@ PRODUCT_PACKAGES += \
 # Init Scripts
 PRODUCT_PACKAGES += \
     fstab.qcom \
-    ueventd.mata.rc \
+    ueventd.qcom.rc \
     init.class_main.sh \
     init.qcom.rc \
     init.qcom.sh \
@@ -289,7 +289,9 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.software.midi.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.software.midi.xml
 
 # Power
-
+PRODUCT_PACKAGES += \
+    android.hardware.power-service-qti \
+    vendor.qti.hardware.perf@1.0.vendor
 
 # Properties
 -include $(LOCAL_PATH)/properties.mk
