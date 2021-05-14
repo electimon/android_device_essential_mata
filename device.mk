@@ -160,6 +160,19 @@ PRODUCT_PACKAGES += \
     ims-ext-common \
     ims_ext_common.xml
 
+# Init Scripts
+PRODUCT_PACKAGES += \
+    fstab.qcom \
+    ueventd.mata.rc \
+    init.class_main.sh \
+    init.qcom.rc \
+    init.qcom.sh \
+    init.qcom.early_boot.sh \
+    init.qcom.post_boot.sh \
+    init.qcom.sensors.sh \
+    init.qcom.usb.rc \
+    init.target.rc
+
 # IPACM
 PRODUCT_PACKAGES += \
     ipacm \
@@ -304,16 +317,6 @@ PRODUCT_ODM_PROPERTIES += \
 # Radio
 PRODUCT_PACKAGES += \
     librmnetctl
-
-# Ramdisk
-PRODUCT_PACKAGES += \
-    fstab.qcom \
-    init.mata.ramdump.rc \
-    init.mata.rc \
-    init.mata.usb.rc \
-    init.qcom.devstart.sh \
-    init.qcom.ipastart.sh \
-    ueventd.mata.rc
 
 # Recovery
 PRODUCT_PACKAGES += \
