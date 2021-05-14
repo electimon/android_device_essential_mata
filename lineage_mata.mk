@@ -40,3 +40,7 @@ BUILD_FINGERPRINT := essential/mata/mata:8.1.0/OPM1.180104.092/224:user/release-
 
 # LOS-Modded
 TARGET_MOTOCAM3_SUPPORTED := false
+
+# GMS
+$(call inherit-product, vendor/partner_gms/products/gms.mk)
+BUILD_GMS=yes
