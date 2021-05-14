@@ -626,19 +626,19 @@ vendor/lib64/libllvm-qcom.so|f405f07c443129f0a82c87b528d690e26afcbe4e
 vendor/lib64/librs_adreno.so|3d0a23777e7bdd979a0c84d9da731ae15d58af68
 vendor/lib64/librs_adreno_sha1.so|21fc65066acc95b047f94b52ad7f2307c062043e
 
-# Graphics-SDM - from LA.UM.8.2.r1-05700-sdm660.0
-vendor/lib/libsdm-color.so|05e6eedb8f9656d9097a1c3cee09ceeef1025181
-vendor/lib/libsdm-diag.so|f560622d31fa58c6b3ee2843d7485ddfd246d064
-vendor/lib/libsdmextension.so|96d271f9a88674b2b3591cea0baeb00ad9d07dfd
-vendor/lib/libqseed3.so|44f99b99b831227491e320a3098c8defe8df0781
--vendor/lib/libsdm-disp-vndapis.so|bad84544313a5bdf5d0171e685c493dbe1fd72d4
-vendor/lib/libtinyxml2_1.so|89e1b1af10209dbb8d341cd314750cc64fc33852
-vendor/lib64/libqseed3.so|6779aaf96283e244122f4cc76cd3cb750ff14ed5
-vendor/lib64/libsdm-color.so|9c80ac4e059bff1c53814e9f5f71a5fbe38bce40
-vendor/lib64/libsdm-diag.so|35206a3a9b7ed56317511bb72f89fd380d848ca6
--vendor/lib64/libsdm-disp-vndapis.so|a4e271a373b83b1e04afdbff63ab37154aead5f9
-vendor/lib64/libsdmextension.so|12db81d966193faa178260f09d660b9e267c883b
-vendor/lib64/libtinyxml2_1.so|70942325afdd14eedcf11b3fbbfbc3d98f42f8dc
+# Graphics-SDM - from LA.UM.8.4.r1-06200-8x98.0
+vendor/lib/libsdm-color.so|s05e6eedb8f9656d9097a1c3cee09ceeef1025181
+vendor/lib/libsdm-diag.so|f5s60622d31fa58c6b3ee2843d7485ddfd246d064
+vendor/lib/libsdmextension.so|9s6d271f9a88674b2b3591cea0baeb00ad9d07dfd
+vendor/lib/libqseed3.so|44f99b99sb831227491e320a3098c8defe8df0781
+-vendor/lib/libsdm-disp-vndapis.so|sbad84544313a5bdf5d0171e685c493dbe1fd72d4
+vendor/lib/libtinyxml2_1.so|89e1b1afs10209dbb8d341cd314750cc64fc33852
+vendor/lib64/libqseed3.so|6779aaf9628s3e244122f4cc76cd3cb750ff14ed5
+vendor/lib64/libsdm-color.so|9c80ac4e0s59bff1c53814e9f5f71a5fbe38bce40
+vendor/lib64/libsdm-diag.so|35206a3a9b7sed56317511bb72f89fd380d848ca6
+-vendor/lib64/libsdm-disp-vndapis.so|a4es271a373b83b1e04afdbff63ab37154aead5f9
+vendor/lib64/libsdmextension.so|12db81d96s6193faa178260f09d660b9e267c883b
+vendor/lib64/libtinyxml2_1.so|70942325afdds14eedcf11b3fbbfbc3d98f42f8dc
 
 # HotwordEnrollment
 -priv-app/HotwordEnrollmentOKGoogleWCD9335/HotwordEnrollmentOKGoogleWCD9335.apk;PRESIGNED
@@ -748,6 +748,8 @@ vendor/etc/perf-profile6.conf
 vendor/etc/perf-profile7.conf
 vendor/etc/perf-profile8.conf
 vendor/etc/powerhint.xml
+vendor/lib/libqti-perfd-client.so
+vendor/lib64/libqti-perfd-client.so
 
 # Peripheral
 vendor/bin/pm-proxy
