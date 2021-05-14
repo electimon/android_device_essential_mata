@@ -737,49 +737,6 @@ vendor/etc/libnfc-nci.conf
 vendor/etc/libnfc-nxp.conf
 vendor/lib/libpn548ad_fw.so
 
-# Perf - from LA.UM.8.2.r1-07400-sdm660.0
-lib/libqti-perfd-client_system.so
-lib/libqti-util_system.so
-lib/libqti_performance.so
-lib64/libqti-perfd-client_system.so
-lib64/libqti-util_system.so
-lib64/libqti_performance.so
-product/lib/vendor.qti.hardware.perf@1.0.so
-product/lib/vendor.qti.hardware.perf@2.0.so
-product/lib/vendor.qti.hardware.perf@2.1.so
-product/lib64/vendor.qti.hardware.perf@1.0.so
-product/lib64/vendor.qti.hardware.perf@2.0.so
-product/lib64/vendor.qti.hardware.perf@2.1.so
-vendor/bin/energy-awareness
-vendor/bin/hw/vendor.qti.hardware.perf@2.1-service
-vendor/etc/init/vendor.qti.hardware.perf@2.1-service.rc
-vendor/etc/perf/commonresourceconfigs.xml
-vendor/etc/perf/perfboostsconfig.xml
-vendor/etc/perf/perfconfigstore.xml
-vendor/etc/perf/targetconfig.xml
-vendor/etc/perf/targetresourceconfigs.xml
-vendor/lib/libperfgluelayer.so
-vendor/lib/libqti-perfd-client.so
-vendor/lib/libqti-perfd.so
-vendor/lib/libqti-util.so
-vendor/lib/libqti-utils.so
-vendor/lib/vendor.qti.hardware.perf@1.0.so
-vendor/lib/vendor.qti.hardware.perf@2.0.so
-vendor/lib/vendor.qti.hardware.perf@2.1.so
-vendor/lib64/libadaptlaunch.so
-vendor/lib64/liblearningmodule.so
-vendor/lib64/libmeters-ns.so
-vendor/lib64/libmeters.so
-vendor/lib64/libperfconfig.so
-vendor/lib64/libperfgluelayer.so
-vendor/lib64/libqti-perfd-client.so
-vendor/lib64/libqti-perfd.so
-vendor/lib64/libqti-util.so
-vendor/lib64/libqti-utils.so
-vendor/lib64/vendor.qti.hardware.perf@1.0.so
-vendor/lib64/vendor.qti.hardware.perf@2.0.so
-vendor/lib64/vendor.qti.hardware.perf@2.1.so
-
 # Perf
 vendor/etc/perf-profile0.conf
 vendor/etc/perf-profile1.conf
@@ -801,6 +758,15 @@ vendor/lib64/libperipheral_client.so
 # Postprocessing
 vendor/lib/libdisp-aba.so
 vendor/lib64/libdisp-aba.so
+
+# Power-Hardware
+vendor/bin/hw/android.hardware.power@1.3-service.mata-libperfmgr
+vendor/etc/init/android.hardware.power@1.3-service.mata-libperfmgr.rc
+-vendor/etc/vintf/manifest/android.hardware.power@1.3-service.mata.xml
+vendor/etc/powerhint.json
+vendor/lib/hw/power.default.so
+vendor/lib64/hw/power.default.so
+vendor/lib64/libperfmgr.so
 
 # QMI - from LA.UM.8.2.r1-07400-sdm660.0
 vendor/lib/libqmi_cci.so
