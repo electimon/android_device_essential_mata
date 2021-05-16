@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2017 The Android Open Source Project
+ * Copyright (C) 2019 The LineageOS Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,53 +13,38 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-#define LOG_TAG "android.hardware.vibrator@1.2-service.mata"
 
-#include <android/hardware/vibrator/1.2/IVibrator.h>
-#include <hidl/HidlSupport.h>
+#define LOG_TAG "android.hardware.vibrator@1.2-service.matamon"
+
+#include <android-base/logging.h>
 #include <hidl/HidlTransportSupport.h>
-#include <utils/Errors.h>
-#include <utils/StrongPointer.h>
 
 #include "Vibrator.h"
 
 using android::hardware::configureRpcThreadpool;
 using android::hardware::joinRpcThreadpool;
+
 using android::hardware::vibrator::V1_2::IVibrator;
 using android::hardware::vibrator::V1_2::implementation::Vibrator;
-using namespace android;
 
-static constexpr char ACTIVATE_PATH[] = "/sys/class/timed_output/vibrator/enable";
-static constexpr char SCALE_PATH[] = "/sys/class/timed_output/vibrator/vmax_mv";
-
-status_t registerVibratorService() {
-    // ostreams below are required
-    std::ofstream activate{ACTIVATE_PATH};
-    if (!activate) {
-        int error = errno;
-        ALOGE("Failed to open %s (%d): %s", ACTIVATE_PATH, error, strerror(error));
-        return -error;
-    }
-
-    std::ofstream scale{SCALE_PATH};
-    if (!scale) {
-        int error = errno;
-        ALOGW("Failed to open %s (%d): %s", SCALE_PATH, error, strerror(error));
-        return -error;
-    }
-
-    sp<IVibrator> vibrator = new Vibrator(std::move(activate), std::move(scale));
-
-    return vibrator->registerAsService();
-}
+using android::OK;
+using android::status_t;
 
 int main() {
-    configureRpcThreadpool(1, true);
-    status_t status = registerVibratorService();
+    android::sp<Vibrator> service = new Vibrator();
 
+    configureRpcThreadpool(1, true);
+
+    status_t status = service->registerAsService();
     if (status != OK) {
-        return status;
+        LOG(ERROR) << "Cannot register Vibrator HAL service.";
+        return 1;
     }
 
+    LOG(INFO) << "Vibrator HAL service ready.";
+
     joinRpcThreadpool();
+
+    LOG(ERROR) << "FOD HAL service failed to join thread pool.";
+    return 1;
 }
