@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-#define LOG_TAG "VibratorService"
+#define LOG_TAG "Electi-VibratorService"
 
 #include <log/log.h>
 
@@ -41,13 +41,15 @@ static constexpr int32_t WAVEFORM_CLICK_EFFECT_MS = 6;
 using Status = ::android::hardware::vibrator::V1_0::Status;
 using EffectStrength = ::android::hardware::vibrator::V1_0::EffectStrength;
 
-Vibrator::Vibrator(std::ofstream&& activate, std::ofstream&& scale) :
+Vibrator::Vibrator(std::ofstream&& activate, std::ofstream&& duration, std::ofstream&& scale) :
     mActivate(std::move(activate)),
+    mDuration(std::move(duration)),
     mScale(std::move(scale)) {}
 
 // Methods from ::android::hardware::vibrator::V1_2::IVibrator follow.
 Return<Status> Vibrator::on(uint32_t timeoutMs) {
-    mActivate << timeoutMs << std::endl;
+    mDuration << timeoutMs << std::endl;
+    mActivate << 1 << std::endl;
     if (!mActivate) {
         ALOGE("Failed to activate (%d): %s", errno, strerror(errno));
         return Status::UNKNOWN_ERROR;
@@ -96,10 +98,10 @@ static uint16_t convertEffectStrength(EffectStrength strength) {
         scale = 1375; // 50%
         break;
     case EffectStrength::MEDIUM:
-        scale = 2062; // 75%
+        scale = 1650; // 75%
         break;
     case EffectStrength::STRONG:
-        scale = 2750;
+        scale = 2250;
         break;
     }
 

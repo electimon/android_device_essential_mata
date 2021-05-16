@@ -1,0 +1,11 @@
+on early-boot
+    # Permissions for vibrator hal
+    chown system system /sys/class/leds/vibrator/activate
+    chown system system /sys/class/leds/vibrator/duration
+    chown system system /sys/class/leds/vibrator/play_mode
+    chown system system /sys/class/leds/vibrator/vmax_mv
+
+service vendor.vibrator-1-2 /vendor/bin/hw/android.hardware.vibrator@1.2-service.matamon
+    class hal
+    user system
+    group system
