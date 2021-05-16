@@ -29,7 +29,7 @@ namespace implementation {
 
 class Vibrator : public IVibrator {
 public:
-    Vibrator(std::ofstream&& activate, std::ofstream&& duration, std::ofstream&& scale);
+    Vibrator(std::ofstream&& activate, std::ofstream&& duration, std::ofstream&& mode, std::ofstream&& scale);
 
     // Methods from ::android::hardware::vibrator::V1_0::IVibrator follow.
     using Status = ::android::hardware::vibrator::V1_0::Status;
@@ -49,6 +49,7 @@ private:
     Return<void> performEffect(Effect effect, EffectStrength strength, perform_cb _hidl_cb);
     std::ofstream mActivate;
     std::ofstream mDuration;
+    std::ofstream mMode;
     std::ofstream mScale;
 };
 }  // namespace implementation

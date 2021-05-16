@@ -31,6 +31,7 @@ using namespace android;
 
 static constexpr char ACTIVATE_PATH[] = "/sys/class/leds/vibrator/activate";
 static constexpr char DURATION_PATH[] = "/sys/class/leds/vibrator/duration";
+static constexpr char MODE_PATH[] = "/sys/class/leds/vibrator/play_mode";
 static constexpr char SCALE_PATH[] = "/sys/class/leds/vibrator/vmax_mv";
 
 status_t registerVibratorService() {
@@ -49,6 +50,13 @@ status_t registerVibratorService() {
         return -error;
     }
 
+    std::ofstream mode{MODE_PATH};
+    if (!mode) {
+        int error = errno;
+        ALOGE("Failed to open %s (%d): %s", MODE_PATH, error, strerror(error));
+        return -error;
+    }
+
     std::ofstream scale{SCALE_PATH};
     if (!scale) {
         int error = errno;
@@ -56,7 +64,7 @@ status_t registerVibratorService() {
         return -error;
     }
 
-    sp<IVibrator> vibrator = new Vibrator(std::move(activate), std::move(duration), std::move(scale));
+    sp<IVibrator> vibrator = new Vibrator(std::move(activate), std::move(duration), std::move(mode), std::move(scale));
 
     return vibrator->registerAsService();
 }

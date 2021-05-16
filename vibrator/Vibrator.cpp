@@ -41,9 +41,10 @@ static constexpr int32_t WAVEFORM_CLICK_EFFECT_MS = 6;
 using Status = ::android::hardware::vibrator::V1_0::Status;
 using EffectStrength = ::android::hardware::vibrator::V1_0::EffectStrength;
 
-Vibrator::Vibrator(std::ofstream&& activate, std::ofstream&& duration, std::ofstream&& scale) :
+Vibrator::Vibrator(std::ofstream&& activate, std::ofstream&& duration, std::ofstream&& mode, std::ofstream&& scale) :
     mActivate(std::move(activate)),
     mDuration(std::move(duration)),
+    mMode(std::move(mode)),
     mScale(std::move(scale)) {}
 
 // Methods from ::android::hardware::vibrator::V1_2::IVibrator follow.
