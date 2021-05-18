@@ -775,8 +775,8 @@ vendor/lib64/hw/power.default.so
 vendor/lib64/libperfmgr.so
 
 # QMI - from LA.UM.8.2.r1-07400-sdm660.0
-vendor/lib/libqmi_cci.so
-vendor/lib64/libqmi_cci.so
+vendor/lib/libqmi_cci.so|ccdd8555caed089e3b8a4f864a837a29b1cff8eb
+vendor/lib64/libqmi_cci.so|6eef6793c477d95d9e54e79ce5d0fafce2d80e0e
 
 # QMI
 etc/permissions/qti_permissions.xml
@@ -889,25 +889,25 @@ vendor/lib64/vendor.qti.hardware.radio.uim_remote_server@1.0_vendor.so
 vendor/radio/qcril_database/qcril.db
 
 # Radio-IMS - from LA.UM.8.2.r1-07400-sdm660.0
-vendor/bin/imsrcsd
-vendor/lib/com.qualcomm.qti.imscmservice@1.0.so
-vendor/lib/lib-imscmservice.so
-vendor/lib/lib-imsrcs-v2.so
-vendor/lib/lib-uceservice.so
-vendor/lib64/com.qualcomm.qti.imscmservice@1.0.so
-vendor/lib64/com.qualcomm.qti.imscmservice@2.0.so
-vendor/lib64/com.qualcomm.qti.imscmservice@2.1.so
-vendor/lib64/com.qualcomm.qti.imscmservice@2.2.so
-vendor/lib64/com.qualcomm.qti.uceservice@2.0.so
-vendor/lib64/com.qualcomm.qti.uceservice@2.1.so
-vendor/lib64/com.qualcomm.qti.uceservice@2.2.so
-vendor/lib64/vendor.qti.ims.callcapability@1.0.so
-vendor/lib64/vendor.qti.ims.callinfo@1.0.so
-vendor/lib64/vendor.qti.ims.factory@1.0.so
-vendor/lib64/lib-imscmservice.so
-vendor/lib64/lib-imsrcsbaseimpl.so
-vendor/lib64/lib-imsrcs-v2.so
-vendor/lib64/lib-uceservice.so
+vendor/bin/imsrcsd|df719bd1ccb6cbf253b7c2043f3627453e636d11
+vendor/lib/com.qualcomm.qti.imscmservice@1.0.so|c29665685c23800a21e2c06d75566004fd50c818
+vendor/lib/lib-imscmservice.so|9db9c8363f27c1c57c68e1e37ebd39d2431efeed
+vendor/lib/lib-imsrcs-v2.so|f8150de04bd0674a86cc4c32efcfaa31a44cfe0f
+vendor/lib/lib-uceservice.so|742e8e186b9ef166ef76afaaac668a678296c83f
+vendor/lib64/com.qualcomm.qti.imscmservice@1.0.so|7ccd9788a97cf8d263f08e84c6a01698cb969bdf
+vendor/lib64/com.qualcomm.qti.imscmservice@2.0.so|814883e21be9789c269b51e01910708d231a41f0
+vendor/lib64/com.qualcomm.qti.imscmservice@2.1.so|4d009c79309573677c739ea40a930d0c098f0d27
+vendor/lib64/com.qualcomm.qti.imscmservice@2.2.so|cc510c2f4cd5ed2d81d01b074905661d559bb410
+vendor/lib64/com.qualcomm.qti.uceservice@2.0.so|302045c9dc0e689e694ca62be5c471edb4ecf186
+vendor/lib64/com.qualcomm.qti.uceservice@2.1.so|640df5798d026cbde72417610f355ed0affc72ff
+vendor/lib64/com.qualcomm.qti.uceservice@2.2.so|0fe19e08b9897bc25bc2a383753f87aa5f267190
+vendor/lib64/vendor.qti.ims.callcapability@1.0.so|2d36b2816c3e4953924c3910c402ca0c69d99cde
+vendor/lib64/vendor.qti.ims.callinfo@1.0.so|d63a33bc0648ca3a6ca5bd88243dd84261c0235b
+vendor/lib64/vendor.qti.ims.factory@1.0.so|6e58e9b7756ef5ccf881f4024f978277b6dea2c4
+vendor/lib64/lib-imscmservice.so|bd5e71cf5d98db1adfb3f1987886ec36437ddb14
+vendor/lib64/lib-imsrcsbaseimpl.so|f8eb357023abd9fea333b0901bcf4ac5e7b92242
+vendor/lib64/lib-imsrcs-v2.so|36fc39fbb7441d01abdf23bf3c34e4c2f4b43e12
+vendor/lib64/lib-uceservice.so|ddf9f15c96677b22ad1f8dce8ffd03786e4707e0
 
 # Radio-IMS
 -app/uceShimService/uceShimService.apk|acfdef9ac40bf6b1bd44dfb4e658387d4cf33d0a
@@ -1025,13 +1025,13 @@ vendor/lib64/sensors.hal.tof.so
 vendor/lib64/sensors.mata.so
 
 # Sensors - from LA.UM.8.2.r1-07400-sdm660.0
-vendor/bin/sensors.qti
-vendor/lib/libsensor1.so
-vendor/lib/libsensor_reg.so
-vendor/lib/sensor_calibrate.so
-vendor/lib64/libsensor1.so
-vendor/lib64/libsensor_reg.so
-vendor/lib64/sensor_calibrate.so
+vendor/bin/sensors.qti|2a5cee424e08848156865ea2291520cf7b4e6393
+vendor/lib/libsensor1.so|b1b0dcb45432e51fabffe595010f35a017c7a3fd
+vendor/lib/libsensor_reg.so|170c40b9b7d48c922cd3ca1a552a34311ee79799
+vendor/lib/sensor_calibrate.so|9f81f1bf43b7871555915c9d57bba16d0419af40
+vendor/lib64/libsensor1.so|dac9d5fb1b5aacfa5bedf812ebdd04eadd0af2dc
+vendor/lib64/libsensor_reg.so|be00c924983a2a279f799332cf2b262da9af78d1
+vendor/lib64/sensor_calibrate.so|dacb7a77e1713a756a43c082329e9f42e2c0d40e
 
 # Thermal
 vendor/bin/hw/android.hardware.thermal@1.0-service.mata
@@ -1048,32 +1048,23 @@ vendor/bin/time_daemon|a213fb73b9b1cbbdb631851a337ffd64ae08367e
 vendor/lib/libtime_genoff.so|d3d9308d4a5d736eb442f6e9daab47cdc5bb61c7
 vendor/lib64/libtime_genoff.so|216cbb72e22a0ca76d766dc0b84055c5b31e0a4c
 
-# Touchscreen-ImproveTouch
-vendor/lib/vendor.qti.hardware.improvetouch.blobmanager@1.0-service.so
-vendor/lib/vendor.qti.hardware.improvetouch.blobmanager@1.0_vendor.so
-vendor/lib/vendor.qti.hardware.improvetouch.gesturemanager@1.0-service.so
-vendor/lib/vendor.qti.hardware.improvetouch.gesturemanager@1.0_vendor.so
-vendor/lib/vendor.qti.hardware.improvetouch.touchcompanion@1.0-service.so
-vendor/lib/vendor.qti.hardware.improvetouch.touchcompanion@1.0_vendor.so
-vendor/lib64/vendor.qti.hardware.improvetouch.blobmanager@1.0-service.so
-vendor/lib64/vendor.qti.hardware.improvetouch.blobmanager@1.0_vendor.so
-vendor/lib64/vendor.qti.hardware.improvetouch.gesturemanager@1.0-service.so
-vendor/lib64/vendor.qti.hardware.improvetouch.gesturemanager@1.0_vendor.so
-vendor/lib64/vendor.qti.hardware.improvetouch.touchcompanion@1.0-service.so
-vendor/lib64/vendor.qti.hardware.improvetouch.touchcompanion@1.0_vendor.so
+# Touchscreen-ImproveTouch - from Electimon's basement
+vendor/lib/vendor.qti.hardware.improvetouch.touchcompanion@1.0-service.so|0b0f1fa0a7ffa2df9212e616b8423eea1282be34
+vendor/lib/vendor.qti.hardware.improvetouch.touchcompanion@1.0.so|0363d9d6b846608e138ee6d421aa137a6a7f2ceb
+vendor/lib64/vendor.qti.hardware.improvetouch.touchcompanion@1.0-service.so|ebe70f4e9d5f57563d7fa2047ab4ec36a0d5a58f
+vendor/lib64/vendor.qti.hardware.improvetouch.touchcompanion@1.0.so|c251d014742966c9929cb63b410b745257c1cf6f
 
-# Touchscreen
-vendor/bin/hbtp_daemon
-vendor/etc/hbtp/hbtpcfg_qtc800s.dat
-vendor/etc/hbtp/hbtpcfg_rohm.dat
-vendor/etc/hbtp/loader.cfg
-vendor/etc/hbtp/qtc800s_dsp.bin
-vendor/lib/libhbtpclient.so
-vendor/lib/libhbtpdsp.so
-vendor/lib/libhbtpfrmwk.so
-vendor/lib64/libhbtpclient.so
-vendor/lib64/libhbtpdsp.so
-vendor/lib64/libhbtpfrmwk.so
+# Touchscreen - from Electimon's basement
+vendor/bin/hbtp_daemon|11fb05d9f4bd46cff13a7d604ad741896eb97f6e
+vendor/etc/hbtp/hbtpcfg_qtc800s.dat|50c2156f69246104303480e62f35ba8047057110
+vendor/etc/hbtp/loader.cfg|2d7ab98b84565ec51c7725cc4042e889e856449e
+vendor/etc/hbtp/qtc800s_dsp.bin|5a14812ef2f02836e4d44338098a6ae47409b912
+vendor/lib/libhbtpclient.so|fea385afcdd0a6fe7dd6f584dba255ffee46c33a
+vendor/lib/libhbtpdsp.so|15826b932f0329b87f18022f51a9128e64cb7909
+vendor/lib/libhbtpfrmwk.so|87b7db1d6c891f128f0e09c649bd67948b11ac9a
+vendor/lib64/libhbtpclient.so|154568d0831952a421dc1bcd3a9b48b5c14b93ec
+vendor/lib64/libhbtpdsp.so|9ec22c8599240732586b9e872746df3720b7f0e8
+vendor/lib64/libhbtpfrmwk.so|5e1684ca10465b15a492f7c94e29bf479f4d43e3
 
 # UBWC
 vendor/lib/libstreamparser.so
