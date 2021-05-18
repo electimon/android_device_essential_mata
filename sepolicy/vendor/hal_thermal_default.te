@@ -1,0 +1,1 @@
+add_hwservice(hal_thermal_default, hal_thermal_hwservice)
