@@ -1,5 +1,4 @@
-#
-# Copyright (C) 2018-2019 The LineageOS Project
+# Copyright 2014 The Android Open Source Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -12,8 +11,15 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-#
 
-PRODUCT_MAKEFILES += \
-    device/essential/mata/hentai_mata.mk \
-    device/essential/mata/aosp_mata.mk
+# Inherit from those products. Most specific first.
+$(call inherit-product, device/essential/mata/device.mk)
+$(call inherit-product, frameworks/native/build/phone-xhdpi-4096-dalvik-heap.mk)
+$(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base_telephony.mk)
+$(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_n_mr1.mk)
+
+PRODUCT_NAME := aosp_mata
+PRODUCT_DEVICE := mata
+PRODUCT_MODEL := Moto G(8) Family (AOSP)
+PRODUCT_BRAND := essential
+PRODUCT_MANUFACTURER := essential

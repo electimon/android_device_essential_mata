@@ -448,3 +448,6 @@ PRODUCT_PACKAGES += \
     libwifi-hal-qcom \
     wpa_supplicant \
     wpa_supplicant.conf
+
+# Vendor blobs
+$(call inherit-product, vendor/essential/mata/mata-vendor.mk)
